@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
 /* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -153,7 +157,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     position: fixed;
-    z-index: 10;
+    z-index: 1;
     top: 5vh;
     right: 5vw;
     background: #12152b;
@@ -192,6 +196,43 @@ body {
   .hamburger.active .hamburger__patty:nth-child(3) {
     -webkit-transform: translate(-50%, -50%) rotate(-45deg);
             transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .cards__leaning {
+    margin: 4rem;
+    width: 300px;
+    height: 300px;
+    border: 0px solid #333030;
+    border-radius: 5px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    -webkit-box-shadow: 1px 1px 5px #696969;
+            box-shadow: 1px 1px 5px #696969;
+    overflow: hidden;
+  }
+  /* j'ajoute au survol un effet 'planant' avec un zoom et une ombre assez claire */
+  .cards__leaning:hover {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+    -webkit-box-shadow: 0px 0px 35px #696969;
+            box-shadow: 0px 0px 35px #696969;
+  }
+  .footer {
+    width: 100%;
+    height: 300px;
+    background-color: #e6255d;
   }
   @-webkit-keyframes slideInLeft {
     from {
