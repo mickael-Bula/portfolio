@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/* pour compiler sass en ligne de commande : sass <source> <destination> */
+/* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 1800px) {
+  .banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+  }
+  .banner__left {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e64741), color-stop(100%, #e6255d), to(#7db9e8));
+    background: linear-gradient(to bottom, #e64741 0%, #e6255d 100%, #7db9e8 100%);
+    -webkit-animation: slideInLeft 0.5s;
+            animation: slideInLeft 0.5s;
+    /* animation-fill-mode indique la façon dont une animation applique les styles à sa cible avant et après son exécution. */
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    /* 'forwards' retient les valeurs calculées définies lors de la dernière étape (keyframe) */
+  }
+  .banner__right {
+    position: absolute;
+    top: -20%;
+    right: -60%;
+    /* on fixe la largeur du bloc à 65% de la totalité de la page */
+    width: 60%;
+    /* on déplace le bloc de la totalité de sa taille pour d'abord le cacher à la vue */
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+    /* on applique une rotation pour donner un effet */
+    height: 280vh;
+    background-color: black;
+    -webkit-animation: slideInRight .5s .5s;
+            animation: slideInRight .5s .5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .banner__logo {
+    position: relative;
+    font-size: 5rem;
+    font-weight: 400;
+    color: white;
+    opacity: 0;
+    top: -10%;
+    right: 30%;
+    -webkit-animation: fadeInLeft .2s 1s;
+            animation: fadeInLeft .2s 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .banner__incipit {
+    position: absolute;
+    bottom: 300px;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+    right: 20%;
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 7rem;
+    color: white;
+    opacity: 0;
+    -webkit-animation: fadeInRight .2s 1.2s;
+            animation: fadeInRight .2s 1.2s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: #12152b;
+    -webkit-clip-path: circle(29px at calc(350px - 5vw - 30px) calc(5vh + 30px));
+            clip-path: circle(29px at calc(350px - 5vw - 30px) calc(5vh + 30px));
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  .nav.active {
+    -webkit-clip-path: circle(75% at 175px 50vh);
+            clip-path: circle(75% at 175px 50vh);
+  }
+  .nav__link {
+    display: block;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    text-align: right;
+    padding: 1vh 5vw;
+    color: white;
+    text-decoration: none;
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  .nav__link:nth-child(1) {
+    -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+  }
+  .nav__link:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+  }
+  .nav__link:nth-child(3) {
+    -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+  }
+  .nav__link:nth-child(4) {
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+  .nav__link.active {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .hamburger {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    top: 5vh;
+    right: 5vw;
+    background: #12152b;
+  }
+  .hamburger__patty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 2px;
+    width: 50%;
+    background-clip: padding-box;
+    background: #f7f7f7;
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  .hamburger__patty:nth-child(1) {
+    -webkit-transform: translate(-50%, calc(-50% - 8px));
+            transform: translate(-50%, calc(-50% - 8px));
+  }
+  .hamburger__patty:last-child {
+    -webkit-transform: translate(-50%, calc(-50% + 8px));
+            transform: translate(-50%, calc(-50% + 8px));
+  }
+  .hamburger.active .hamburger__patty {
+    background: white;
+  }
+  .hamburger.active .hamburger__patty:nth-child(1) {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .hamburger.active .hamburger__patty:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .hamburger__patty:nth-child(3) {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  @-webkit-keyframes slideInLeft {
+    from {
+      left: -100vw;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @keyframes slideInLeft {
+    from {
+      left: -100vw;
+    }
+    to {
+      left: 0;
+    }
+  }
+  @-webkit-keyframes slideInRight {
+    from {
+      right: -60vw;
+    }
+    to {
+      right: 0vw;
+    }
+  }
+  @keyframes slideInRight {
+    from {
+      right: -60vw;
+    }
+    to {
+      right: 0vw;
+    }
+  }
+  @-webkit-keyframes fadeInLeft {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadeInRight {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInRight {
+    to {
+      opacity: 1;
+    }
+  }
+}
+/*# sourceMappingURL=style.css.map */

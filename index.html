@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="app.js" defer></script>
+    <title>mon portfolio</title>
 </head>
 <body>
-    <div class="absolute" style="height: 100vh; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M189.90,-3.44 C152.69,67.09 247.45,70.56 219.80,153.47 L0.00,150.00 L0.00,0.00 Z" style="stroke: none; fill: #08f;"></path></svg></div>
-    <div class="isometric-card ouroboros"></div>
-    <div class="isometric-card move chakra"></div>
-    <div class="back"></div>
+    <!-- div de premier niveau qui contient la navbar -->
+    <div class="banner">
+        <!-- on commence avec une animation d'ouverture -->
+        <div class="banner__left">
+            <div class="banner__logo">MB</div>
+        </div>
+        <div class="banner__right">
+        </div>
+        <div class="banner__incipit">mon portfolio<br />mickaël bula</div>
+    </div>
+
+    <!-- la navbar latérale -->
+    <nav class="nav">
+        <a href="#" class="nav__link">Home</a>
+        <a href="#" class="nav__link">About</a>
+        <a href="#" class="nav__link">Shop</a>
+        <a href="#" class="nav__link">Contact</a>
+    </nav>
+        
+    <div class="hamburger">
+        <span class="hamburger__patty"></span>
+        <span class="hamburger__patty"></span>
+        <span class="hamburger__patty"></span>
+    </div>
 </body>
 </html>
