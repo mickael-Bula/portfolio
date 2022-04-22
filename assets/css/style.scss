@@ -16,307 +16,305 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (min-width: 1800px) {   
-    .banner {
-        position: relative;
-        width: 100vw;
+/* GESTION DU RESPONSIVE */
+@media screen and (max-width: 1799px) {
+    
+}
+
+.banner {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+    
+    &__left {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100vh;
-        background-color: white;
-        overflow: hidden;
-        
-        &__left {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: $bgGradient;
-            animation: slideInLeft 0.5s;
-            /* animation-fill-mode indique la façon dont une animation applique les styles à sa cible avant et après son exécution. */
-            animation-fill-mode: forwards;  /* 'forwards' retient les valeurs calculées définies lors de la dernière étape (keyframe) */
-        }
-        
-        &__right {
-            position: absolute;
-            top: -20%;
-            right: -60%;    /* on fixe la largeur du bloc à 65% de la totalité de la page */
-            width: 60%;     /* on déplace le bloc de la totalité de sa taille pour d'abord le cacher à la vue */
-        transform: rotate(30deg);   /* on applique une rotation pour donner un effet */
-        height: 280vh;
+        background: $bgGradient;
+        animation: slideInLeft 0.5s;
+        /* animation-fill-mode indique la façon dont une animation applique les styles à sa cible avant et après son exécution. */
+        animation-fill-mode: forwards;  /* 'forwards' retient les valeurs calculées définies lors de la dernière étape (keyframe) */
+    }
+    
+    &__right {
+        position: absolute;
         background-color: black;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(100% 100%, 100% 100%, 100% 0, 100% 0);
         animation: slideInRight .5s .5s;
         animation-fill-mode: forwards;
-        }
-
-        &__logo {
-            position: relative;
-            font-size: 5rem;
-            font-weight: 400;
-            color: white;
-            opacity: 0;
-            top: -10%;
-            right: 30%;
-            animation: fadeInLeft .2s 1s;
-            animation-fill-mode: forwards;
-        }
-        
-        &__incipit {
-            position: absolute;
-            bottom: 300px;
-            transform: translateY(50%);
-            right: 20%;
-            font-size: 5rem;
-            font-weight: 400;
-            line-height: 7rem;
-            color: white;
-            opacity: 0;
-            animation: fadeInRight .2s 1.2s;
-            animation-fill-mode: forwards;
-        }
     }
 
-    .nav {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: $navWidth;
-        height: 100%;
-        background: $navBarBgColor;
-        clip-path: circle(29px at calc(#{$navWidth} - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
-        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+    &__logo {
+        position: relative;
+        font-size: 5rem;
+        font-weight: 400;
+        color: white;
+        opacity: 0;
+        top: -10%;
+        right: 30%;
+        animation: fadeInLeft .2s 1s;
+        animation-fill-mode: forwards;
+    }
+    
+    &__incipit {
+        position: absolute;
+        bottom: 300px;
+        transform: translateY(50%);
+        right: 20%;
+        font-size: 5rem;
+        font-weight: 400;
+        line-height: 7rem;
+        color: white;
+        opacity: 0;
+        animation: fadeInRight .2s 1.2s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: $navWidth;
+    height: 100%;
+    background: $navBarBgColor;
+    clip-path: circle(29px at calc(#{$navWidth} - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
+    transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+    
+    &.active {
+        clip-path: circle(75% at #{$navWidth / 2} 50vh);
+    }
+    
+    &__link {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        letter-spacing: -1px;
+        text-align: right;
+        padding: 1vh 3vw;
+        color: white;
+        text-decoration: none;
+        transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+        opacity: 0;
+        transform: translateY(50%);
+        
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+            transition-delay: $i * 0.05s;
+            }
+        }
         
         &.active {
-          clip-path: circle(75% at #{$navWidth / 2} 50vh);
-        }
-        
-        &__link {
-            display: block;
-            font-size: 2rem;
-            font-weight: 400;
-            text-transform: capitalize;
-            letter-spacing: -1px;
-            text-align: right;
-            padding: 1vh 3vw;
-            color: white;
-            text-decoration: none;
-            transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-            opacity: 0;
-            transform: translateY(50%);
-            
-            @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
-                transition-delay: $i * 0.05s;
-                }
-            }
-            
-            &.active {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            opacity: 1;
+            transform: translateY(0);
         }
     }
-      
-        .hamburger {
-            $p: &;
-            width: $hamburgerSize;
-            height: $hamburgerSize;
-            border-radius: 50%;
-            cursor: pointer;
-            position: fixed;
-            z-index: 1;
-            top: 5vh;
-            right: 5vw;
-            background: $navBarBgColor;
-            transition: ease .2s;
-            
-            &__patty {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 2px;
-                width: 50%;
-                background-clip: padding-box;
-                background: darken(white, 3);
-                transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
-            
-            &:nth-child(1) {
-                transform: translate(-50%, calc(-50% - 8px));
-                }
-            
-            &:last-child {
-                transform: translate(-50%, calc(-50% + 8px));
-                }
-            }
-            
-            &.active {            
-                #{$p}__patty {
-                    background: white;
-                    
-                    &:nth-child(1) {
-                    transform: translate(-50%, -50%) rotate(45deg);
-                    }
-                    
-                    &:nth-child(2) {
-                    opacity: 0;
-                    }
-                    
-                    &:nth-child(3) {
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                    }
-                }
-            }
-
-            &:hover {
-                transition: ease .2s;
-                background-color: $navBarBgColorHover;
-            }
-        }
-
-    .projects {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        &__title {
-            font-size: 3rem;
-            font-weight: 300;
-        }
-
-        &__cards {
-            display: flex;
-            width: 80%;
-            margin: auto;
-            justify-content: center;
-            align-items: center;
-            
-            &--leaning {
-                margin: 4rem;
-                width: 400px;
-                height: 400px;
-                border: 0px solid rgb(51, 48, 48);
-                border-radius: 5px;
-                transition: 0.5s ease;
-                box-shadow: 1px 1px 5px #696969;
-                overflow: hidden;
+}
+    
+    .hamburger {
+        $p: &;
+        width: $hamburgerSize;
+        height: $hamburgerSize;
+        border-radius: 50%;
+        cursor: pointer;
+        position: fixed;
+        z-index: 1;
+        top: 5vh;
+        right: 5vw;
+        background: $navBarBgColor;
+        transition: ease .2s;
+        
+        &__patty {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 2px;
+            width: 50%;
+            background-clip: padding-box;
+            background: darken(white, 3);
+            transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+        
+        &:nth-child(1) {
+            transform: translate(-50%, calc(-50% - 8px));
             }
         
-            /* j'ajoute au survol un effet 'planant' avec un zoom et une ombre assez claire */
-            &--leaning:hover {
-                transform: scale(1.01);
-                box-shadow: 0px 0px 35px #696969;
+        &:last-child {
+            transform: translate(-50%, calc(-50% + 8px));
             }
-
-            & img {
-                max-width: 400px;
-            }
-        }        
-    }    
-
-    .contact {
-        width: 100%;
-        background-color: $navBarBgColor;
-        text-align: center;
-	    padding: 70px 0 50px 0;
-
-        &__message {
-            color: #c7c5ca;
-            font-size: 40px;
-            margin-bottom: 30px;
         }
-
-        &__email-btn {
-            color: #fff;
-            background-color: #f46674;
-            padding: 12px 30px;
-            display: inline-block;
-            border-radius: 6px;
-            font-size: 28px;
-            width: 240px;
-
-            & span {
-                cursor: pointer;
-                display: inline-block;
-                position: relative;
-                transition: 0.5s;
-            }
-
-            & span:after {
-                content: '\00bb';
-                position: absolute;
+        
+        &.active {            
+            #{$p}__patty {
+                background: white;
+                
+                &:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(45deg);
+                }
+                
+                &:nth-child(2) {
                 opacity: 0;
-                top: 0;
-                right: -20px;
-                transition: 0.5s;
+                }
+                
+                &:nth-child(3) {
+                transform: translate(-50%, -50%) rotate(-45deg);
+                }
             }
         }
 
-        &__email-btn:hover span {
-            padding-right: 25px;
-        }
-
-        &__email-btn:hover span:after {
-            opacity: 1;
-            right: 0;
-        }
-
-        &__social-icons {
-            margin-top: 50px;
-
-            & li  {
-                display: inline-block;
-                margin: 0 16px;
-            }
-
-            & li a {
-                display: block;
-            }
-
-            & li i {
-                color: #c3c3cb;
-                font-size: 34px;
-                transition: all 0.3s;
-            }
-
-            & li i:hover {
-                transform: scale(1.3);
-            }
+        &:hover {
+            transition: ease .2s;
+            background-color: $navBarBgColorHover;
         }
     }
 
-    @keyframes slideInLeft {
-        from {        
-            left: -100vw;
+.projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    &__cards {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        
+        &--leaning {
+            margin: 4rem;
+            width: 400px;
+            height: 400px;
+            border: 0px solid rgb(51, 48, 48);
+            border-radius: 5px;
+            transition: 0.5s ease;
+            box-shadow: 1px 1px 5px #696969;
+            overflow: hidden;
         }
-        to {
-            left: 0;
+    
+        /* j'ajoute au survol un effet 'planant' avec un zoom et une ombre assez claire */
+        &--leaning:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 0px 35px #696969;
+        }
+
+        & img {
+            max-width: 400px;
+        }
+    }        
+}    
+
+.contact {
+    width: 100%;
+    background-color: $navBarBgColor;
+    text-align: center;
+    padding: 70px 0 50px 0;
+
+    &__message {
+        color: #c7c5ca;
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    &__email-btn {
+        color: #fff;
+        background-color: #f46674;
+        padding: 12px 30px;
+        display: inline-block;
+        border-radius: 6px;
+        font-size: 28px;
+        width: 240px;
+
+        & span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        & span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
         }
     }
 
-    @keyframes slideInRight {
-        from {
-            right: -60vw;
-        }
-        to {
-            right: 0vw; 
-        }
+    &__email-btn:hover span {
+        padding-right: 25px;
     }
 
-    @keyframes fadeInLeft {
-        to {
-            opacity: 1;
-        }
+    &__email-btn:hover span:after {
+        opacity: 1;
+        right: 0;
     }
 
-    @keyframes fadeInRight {
-        to {
-            opacity: 1;
+    &__social-icons {
+        margin-top: 50px;
+
+        & li  {
+            display: inline-block;
+            margin: 0 16px;
         }
+
+        & li a {
+            display: block;
+        }
+
+        & li i {
+            color: #c3c3cb;
+            font-size: 34px;
+            transition: all 0.3s;
+        }
+
+        & li i:hover {
+            transform: scale(1.3);
+        }
+    }
+}
+
+@keyframes slideInLeft {
+    from {        
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        clip-path: polygon(100% 100%, 40% 100%, 75% 0%, 100% 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
     }
 }
