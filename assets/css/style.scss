@@ -216,14 +216,78 @@ body {
             & img {
                 max-width: 400px;
             }
-        }
-        
+        }        
     }    
 
-    .footer {
+    .contact {
         width: 100%;
-        height: 300px;
         background-color: $navBarBgColor;
+        text-align: center;
+	    padding: 70px 0 50px 0;
+
+        &__message {
+            color: #c7c5ca;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        &__email-btn {
+            color: #fff;
+            background-color: #f46674;
+            padding: 12px 30px;
+            display: inline-block;
+            border-radius: 6px;
+            font-size: 28px;
+            width: 240px;
+
+            & span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+            & span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+        }
+
+        &__email-btn:hover span {
+            padding-right: 25px;
+        }
+
+        &__email-btn:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        &__social-icons {
+            margin-top: 50px;
+
+            & li  {
+                display: inline-block;
+                margin: 0 16px;
+            }
+
+            & li a {
+                display: block;
+            }
+
+            & li i {
+                color: #c3c3cb;
+                font-size: 34px;
+                transition: all 0.3s;
+            }
+
+            & li i:hover {
+                transform: scale(1.3);
+            }
+        }
     }
 
     @keyframes slideInLeft {

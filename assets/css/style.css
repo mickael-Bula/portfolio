@@ -252,10 +252,68 @@ body {
   .projects__cards img {
     max-width: 400px;
   }
-  .footer {
+  .contact {
     width: 100%;
-    height: 300px;
     background-color: #333F4F;
+    text-align: center;
+    padding: 70px 0 50px 0;
+  }
+  .contact__message {
+    color: #c7c5ca;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .contact__email-btn {
+    color: #fff;
+    background-color: #f46674;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 28px;
+    width: 240px;
+  }
+  .contact__email-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .contact__email-btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .contact__email-btn:hover span {
+    padding-right: 25px;
+  }
+  .contact__email-btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .contact__social-icons {
+    margin-top: 50px;
+  }
+  .contact__social-icons li {
+    display: inline-block;
+    margin: 0 16px;
+  }
+  .contact__social-icons li a {
+    display: block;
+  }
+  .contact__social-icons li i {
+    color: #c3c3cb;
+    font-size: 34px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .contact__social-icons li i:hover {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
   @-webkit-keyframes slideInLeft {
     from {
