@@ -221,6 +221,18 @@ body {
     }        
 }
 
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+  
+.reveal.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .contact {
     width: 100%;
     background-color: $navBarBgColor;
