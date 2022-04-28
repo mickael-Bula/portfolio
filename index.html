@@ -27,8 +27,9 @@
     <!-- la navbar latérale -->
     <nav class="nav">
         <a href="#" class="nav__link">Accueil</a>
-        <a href="labs" class="nav__link">labs</a>
-        <a href="#" class="nav__link">A propos</a>
+        <a href="#projects" class="nav__link">Projets</a>
+        <a href="#labs" class="nav__link">labs</a>
+        <a href="#about" class="nav__link">A propos</a>
         <a href="#contact" class="nav__link">Contact</a>
     </nav>
         
@@ -38,13 +39,19 @@
         <span class="hamburger__patty"></span>
     </div>
 
-    <section id="labs">
+    <section id="projects">
         <div class="projects">
             <h1 class="projects__title">Projets réalisés</h1>
         </div>
         <div class="projects__cards">
-        <a href="https://culturecityapp.simschab.fr/"><article class="projects__cards--leaning reveal"><img src="assets/images/screenshot-culturecityapp.png" alt="capture d'écran du site culture-city-app"></article></a>
-        <a href="./todolist.html"><article class="projects__cards--leaning reveal"><img src="assets/images/todolist.png" alt="capture d'écran de la todolist"></article></a>        
+        <a href="https://culturecityapp.simschab.fr/">
+            <article class="projects__cards--leaning reveal"><img src="assets/images/screenshot-culturecityapp.png" alt="capture d'écran du site culture-city-app"></article>
+            <span>HTML Sass Javascript PHP Symfony MariaDB</span>
+        </a>
+        <a href="./todolist.html">
+            <article class="projects__cards--leaning reveal"><img src="assets/images/todolist.png" alt="capture d'écran de la todolist"></article>
+            <span>Une simple todolist avec persistance des données dans le Localstorage</span>
+        </a>        
         <article class="projects__cards--leaning reveal"></article>
         </div>
     </section>
@@ -63,5 +70,5 @@
 
 <!-- TODO : ajouter une card vers l'app météo -->
 <!-- TODO : modifier ma todolist pour qu'elle utilise le local storage -->
-<!-- TODO : ajouter une navbar pour gérer la navigation vers le portfolio -->
+<!-- TODO : ajouter un footer à la todolist pour gérer le retour vers le portfolio -->
 <!-- TODO : gérer le responsive en commençant par la taille de mon laptop -->
