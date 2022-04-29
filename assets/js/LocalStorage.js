@@ -1,4 +1,4 @@
-export default class LocalStorage {
+class LocalStorage {
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem("tasks") || []);
   }
@@ -48,3 +48,5 @@ export default class LocalStorage {
     }
   }
 }
+
+export { LocalStorage }
