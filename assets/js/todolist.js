@@ -1,11 +1,15 @@
 import LocalStorage from "./LocalStorage.js";
 
 const app = {
+  storage: new LocalStorage(),
+  tasks: [],
+  nextId: Number,
+
   init: function () {
     console.log("app.init()");
-    const storage = new LocalStorage();
-    const tasks = storage.tasks;
-    console.log(tasks);
+    app.tasks = app.storage.getTasks();
+    app.nextId = app.storage.getId() + 1;
+    console.log(app.tasks, app.nextId);
     // Create a "close" button and append it to each list item
     const myNodelist = document.getElementsByTagName("LI");
     for (const element of myNodelist) {
@@ -51,6 +55,8 @@ const app = {
       alert("Veuillez saisir une tâche");
     } else {
       document.getElementById("myUL").appendChild(li);
+      const task = { content: inputValue, id: nextId };
+      app.LocalStorage.update(task);
     }
     document.getElementById("myInput").value = "";
     app.addCloseBtn(li);
@@ -64,3 +70,5 @@ const app = {
 };
 
 document.addEventListener("DOMContentLoaded", app.init);
+
+// TODO : ajouter une propriété isChecked pour gérer l'état de chaque tâche

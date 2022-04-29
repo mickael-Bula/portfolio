@@ -1,7 +1,6 @@
 export default class LocalStorage {
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    console.log(this.tasks);
   }
 
   getTasks() {
