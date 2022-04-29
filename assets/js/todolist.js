@@ -1,5 +1,11 @@
+import LocalStorage from "./LocalStorage.js";
+
 const app = {
   init: function () {
+    console.log("app.init()");
+    const storage = new LocalStorage();
+    const tasks = storage.tasks;
+    console.log(tasks);
     // Create a "close" button and append it to each list item
     const myNodelist = document.getElementsByTagName("LI");
     for (const element of myNodelist) {

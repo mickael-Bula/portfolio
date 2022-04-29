@@ -1,10 +1,11 @@
-class LocalStorage {
+export default class LocalStorage {
   constructor() {
-    this.tasks = JSON.parse(localStorage.getItem("tasks") || []);
+    this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    console.log(this.tasks);
   }
 
   getTasks() {
-      return this.tasks;
+    return this.tasks;
   }
 
   getId() {
@@ -48,5 +49,3 @@ class LocalStorage {
     }
   }
 }
-
-export { LocalStorage }
