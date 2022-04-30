@@ -8,23 +8,24 @@ export default class LocalStorage {
   }
 
   getId() {
-    // if (this.tasks.length !== 0) {
-    //     return max(this.tasks.map(tasks => tasks.id));
-    // }
-    // return 0;
-    return this.tasks.length !== 0
-      ? max(this.tasks.map((tasks) => tasks.id))
-      : 0;
+    if (this.tasks.length === 0) return 0;
+    const ids = this.tasks.map((task) => task.id);
+    return Math.max(...ids);
+  }
+
+  nextId() {
+    return this.getId() + 1;
   }
 
   create(data) {
-    data.token = this.getId();
+    data.id = this.nextId();
     this.tasks.push(data);
+    console.log(data);
     localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 
   getIndexById(id) {
-    for (let i = 0; i > this.tasks.length; i++) {
+    for (let i = 0; i < this.tasks.length; i++) {
       if (this.tasks[i].id === id) {
         return i;
       }
@@ -32,7 +33,7 @@ export default class LocalStorage {
     return -1;
   }
 
-  update() {
+  update(data) {
     let index = this.getIndexById(data.id);
     if (index !== -1) {
       this.tasks[index] = data;
@@ -40,8 +41,8 @@ export default class LocalStorage {
     }
   }
 
-  delete(data) {
-    let index = this.getIndexById(data.id);
+  delete(id) {
+    let index = this.getIndexById(id);
     if (index !== -1) {
       this.tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(this.tasks));

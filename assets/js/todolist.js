@@ -2,18 +2,11 @@ import LocalStorage from "./LocalStorage.js";
 
 const app = {
   storage: new LocalStorage(),
-  tasks: [],
-  nextId: Number,
 
   init: function () {
     console.log("app.init()");
-    app.tasks = app.storage.getTasks();
-    app.nextId = app.storage.getId() + 1;
-    console.log(app.tasks, app.nextId);
-    // Create a "close" button and append it to each list item
-    const myNodelist = document.getElementsByTagName("LI");
-    for (const element of myNodelist) {
-      app.addCloseBtn(element);
+    for (const task of app.storage.getTasks()) {
+      app.createListElement(task);
     }
 
     document.querySelector(".addBtn").addEventListener("click", app.newElement);
@@ -34,6 +27,16 @@ const app = {
     );
   },
 
+  createListElement: function (task) {
+    const li = document.createElement("LI");
+    const content = document.createTextNode(task.content);
+    li.appendChild(content);
+    li.id = app.storage.getId();
+    document.getElementById("myUL").appendChild(li);
+    // Create a "close" button and append it to each list item
+    app.addCloseBtn(li);
+  },
+
   addCloseBtn: function (element) {
     const span = document.createElement("SPAN");
     const txt = document.createTextNode("\u00D7");
@@ -42,6 +45,7 @@ const app = {
     element.appendChild(span);
     span.addEventListener("click", function () {
       this.parentElement.style.display = "none";
+      app.storage.delete(this.parentElement.id);
     });
   },
 
@@ -55,8 +59,8 @@ const app = {
       alert("Veuillez saisir une tâche");
     } else {
       document.getElementById("myUL").appendChild(li);
-      const task = { content: inputValue, id: nextId };
-      app.LocalStorage.update(task);
+      const task = { content: inputValue };
+      app.storage.create(task);
     }
     document.getElementById("myInput").value = "";
     app.addCloseBtn(li);
@@ -71,4 +75,5 @@ const app = {
 
 document.addEventListener("DOMContentLoaded", app.init);
 
+// TODO : il faut itérer sur la liste des tasks et créer des LI à partir de leur contenu
 // TODO : ajouter une propriété isChecked pour gérer l'état de chaque tâche
