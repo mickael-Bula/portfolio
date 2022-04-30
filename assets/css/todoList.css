@@ -9,13 +9,13 @@ body {
     box-sizing: border-box;
   }
 
-  h2, h3 {
+  h2 {
     font-weight: 400;
   }
   
   /* Remove margins and padding from the list */
   .tasks {
-    margin: 0 40px;
+    margin: 0;
     padding: 0;
   }
   
@@ -124,13 +124,12 @@ body {
     background-color: #bbb;
   }
 
-  /* FOOTER */
   .contact {
     position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 3em;
+    padding: 2rem;
   }
   
   .contact__social-icons {

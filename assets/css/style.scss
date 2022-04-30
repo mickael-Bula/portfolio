@@ -197,6 +197,12 @@ body {
         margin: auto;
         justify-content: center;
         align-items: center;
+
+        &--teaser, &--stack {
+            display: flex;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
         
         &--leaning {
             margin: 4rem;
