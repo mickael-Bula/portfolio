@@ -6,7 +6,7 @@ const app = {
   init: function () {
     console.log("app.init()");
     for (const task of app.storage.getTasks()) {
-      app.createListElement(task);
+      app.displayListElement(task);
     }
 
     document.querySelector(".addBtn").addEventListener("click", app.newElement);
@@ -27,11 +27,12 @@ const app = {
     );
   },
 
-  createListElement: function (task) {
+  displayListElement: function (task) {
     const li = document.createElement("LI");
+    li.className = "task";
     const content = document.createTextNode(task.content);
     li.appendChild(content);
-    li.id = app.storage.getId();
+    li.id = task.id;
     document.getElementById("myUL").appendChild(li);
     // Create a "close" button and append it to each list item
     app.addCloseBtn(li);
@@ -52,6 +53,7 @@ const app = {
   // Create a new list item when clicking on the "Add" button
   newElement: function () {
     const li = document.createElement("LI");
+    li.className = "task";
     const inputValue = document.getElementById("myInput").value;
     const content = document.createTextNode(inputValue);
     li.appendChild(content);
@@ -60,7 +62,8 @@ const app = {
     } else {
       document.getElementById("myUL").appendChild(li);
       const task = { content: inputValue };
-      app.storage.create(task);
+      // get id returned by storage.create and add it to DOM
+      li.id = app.storage.create(task);
     }
     document.getElementById("myInput").value = "";
     app.addCloseBtn(li);
@@ -75,5 +78,4 @@ const app = {
 
 document.addEventListener("DOMContentLoaded", app.init);
 
-// TODO : il faut itérer sur la liste des tasks et créer des LI à partir de leur contenu
 // TODO : ajouter une propriété isChecked pour gérer l'état de chaque tâche

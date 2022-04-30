@@ -19,14 +19,15 @@ export default class LocalStorage {
 
   create(data) {
     data.id = this.nextId();
-    this.tasks.push(data);
     console.log(data);
+    this.tasks.push(data);
     localStorage.setItem("tasks", JSON.stringify(this.tasks));
+    return data.id;
   }
 
   getIndexById(id) {
     for (let i = 0; i < this.tasks.length; i++) {
-      if (this.tasks[i].id === id) {
+      if (this.tasks[i].id === parseInt(id, 10)) {
         return i;
       }
     }
