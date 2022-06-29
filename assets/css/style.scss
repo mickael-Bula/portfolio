@@ -62,7 +62,7 @@ body {
         font-weight: 400;
         color: white;
         opacity: 0;
-        top: 20%;
+        top: 30%;
         left: 30%;
         animation: fadeInLeft .2s 1s;
         animation-fill-mode: forwards;
@@ -85,26 +85,25 @@ body {
 
 .nav {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column nowrap;
+    align-items: flex-start;
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
-    height: 8em;
+    height: 12em;
     z-index: 1;
     background: $navBarBgColor;
     clip-path: circle(29px at calc(100% - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
     transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
     
     &.active {
-        clip-path: circle(75% at 50% 10%);
+        clip-path: circle(75% at 50% 50%);
     }
     
     &__link {
         display: block;
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: 400;
         text-transform: capitalize;
         letter-spacing: -1px;
@@ -357,6 +356,108 @@ body {
             right: 20%;
         }
     }
+    .nav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 8em;
+        z-index: 1;
+        background: $navBarBgColor;
+        clip-path: circle(29px at calc(100% - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+        
+        &.active {
+            clip-path: circle(75% at 50% 10%);
+        }
+        
+        &__link {
+            display: block;
+            font-size: 1.5em;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            text-align: left;
+            padding: 1vh 1vw;
+            color: white;
+            text-decoration: none;
+            transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+            opacity: 0;
+            transform: translateX(50%);
+            
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                transition-delay: $i * 0.05s;
+                }
+            }
+            
+            &.active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+        
+        .hamburger {
+            $p: &;
+            width: $hamburgerSize;
+            height: $hamburgerSize;
+            border-radius: 50%;
+            cursor: pointer;
+            position: fixed;
+            z-index: 1;
+            top: 5vh;
+            right: 5vw;
+            background: $navBarBgColor;
+            transition: ease .2s;
+            
+            &__patty {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 2px;
+                width: 50%;
+                background-clip: padding-box;
+                background: darken(white, 3);
+                transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+            
+            &:nth-child(1) {
+                transform: translate(-50%, calc(-50% - 8px));
+                }
+            
+            &:last-child {
+                transform: translate(-50%, calc(-50% + 8px));
+                }
+            }
+            
+            &.active {            
+                #{$p}__patty {
+                    background: white;
+                    
+                    &:nth-child(1) {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                    
+                    &:nth-child(2) {
+                    opacity: 0;
+                    }
+                    
+                    &:nth-child(3) {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                    }
+                }
+            }
+    
+            &:hover {
+                transition: ease .2s;
+                background-color: $navBarBgColorHover;
+            }
+        }
 }
 
 @media screen and (min-width:992px) {
