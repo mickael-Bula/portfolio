@@ -14,18 +14,20 @@ html {
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: #c7c5ca;
 }
 
-/* GESTION DU RESPONSIVE */
-@media screen and (max-width: 1799px) {
-    
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    background: #F1F2F3;
 }
 
 .banner {
     position: relative;
     width: 100vw;
+    max-width: 1920px;
     height: 100vh;
-    background-color: white;
     overflow: hidden;
     
     &__left {
@@ -55,7 +57,7 @@ body {
 
     &__logo {
         position: relative;
-        font-size: 5rem;
+        font-size: 5em;
         font-weight: 400;
         color: white;
         opacity: 0;
@@ -321,7 +323,7 @@ body {
 
 @keyframes slideInRight {
     to {
-        clip-path: polygon(100% 100%, 40% 100%, 75% 0%, 100% 0);
+        clip-path: polygon(100% 100%, 25% 100%, 75% 0%, 100% 0);
     }
 }
 
