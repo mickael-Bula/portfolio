@@ -6,15 +6,13 @@ const navItems = nav.querySelectorAll(".nav__link");
 toggle.addEventListener("click", toggleNav);
 
 function toggleNav() {
-  console.log("dans togglenav");
-
-  // Show Nav
+  // on affiche la navbar
   nav.classList.toggle("active");
 
-  // Transform Hamburger into 'X'
+  // on transforme le menu hamburger en 'X'
   toggle.classList.toggle("active");
 
-  // Show Nav Items
+  // on affiche les liens de la navbar
   navItems.forEach((item) => item.classList.toggle("active"));
 }
 
@@ -26,13 +24,9 @@ function reveal() {
   const windowHeight = window.innerHeight;
   let elementVisible = 100;
 
-  // on boucle sur les éléments pour vérifier si la hauteur a été atteinte pour ajouter la classe .show ou l'enlever
+  // on boucle sur les éléments pour vérifier si la hauteur a été atteinte pour ajouter la classe .show ou la supprimer
   for (const reveal of reveals) {
-    if (reveal.getBoundingClientRect().top < windowHeight - elementVisible)
-      reveal.classList.add("show");
-    else reveal.classList.remove("show");
-    // on incrémente la hauteur afin de créer un décallage dans l'apparition des éléments
-    elementVisible += 50;
+    (reveal.getBoundingClientRect().top < windowHeight - elementVisible) ? reveal.classList.add("show") : reveal.classList.remove("show");
   }
 }
 

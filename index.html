@@ -37,9 +37,12 @@
     </header>
         
     <div class="hamburger">
-        <span class="hamburger__patty"></span>
-        <span class="hamburger__patty"></span>
-        <span class="hamburger__patty"></span>
+        <!-- la classe suivante sert à ramener le menu hamburger et la navbar sur la page pour les écrans très larges (+1920px) -->
+        <div class="hamburger__fixed-menu">
+            <span class="hamburger__patty"></span>
+            <span class="hamburger__patty"></span>
+            <span class="hamburger__patty"></span>
+        </div>
     </div>
 
     <section id="projects">
@@ -68,7 +71,7 @@
     </section>
 
     <footer id="contact" class="contact">
-        <p class="contact__message">Ce portfolio vous a plu ?<br>N'hésitez pas à me contacter.</p>
+        <p class="contact__message">Ce portfolio vous a plu ?<br>N'hésitez pas à laisser un commentaire.</p>
         <a href="mailto:bula.mickael@gmail.com?subject=Prise de contact" class="contact__email-btn"><span><i class="fa fa-envelope-o" aria-hidden="true"></i> Me Contacter</span></a>
         <ul class="contact__social-icons">
         <li><a href="https://www.linkedin.com/in/mickael-bula/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -81,7 +84,7 @@
 </body>
 </html>
 
-<!-- TODO : ajouter une card vers l'app météo -->
-<!-- TODO : centrer les icones du footer -->
-<!-- TODO : gérer le responsive en commençant par la taille de mon laptop -->
+<!-- TODO : ajouter l'app météo sur github et créer un lien depuis le portfolio -->
 <!-- TODO : créer mon logo MB -->
+<!-- TODO : corriger le lien A propos qui manque d'espace et ruine la mise en page -->
+<!-- TODO : mettre les miniatures des projets en regard du texte correspondant + laisser une marge gauche pour ne pas être recouvert par le menu -->

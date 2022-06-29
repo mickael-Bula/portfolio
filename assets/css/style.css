@@ -12,6 +12,7 @@ body {
 }
 
 .wrapper {
+  /* je fixe une taille max à la page pour éviter de trop étirer le design */
   max-width: 1920px;
   min-height: 380px;
   margin: 0 auto;
@@ -196,13 +197,13 @@ body {
 }
 
 .hamburger__patty:nth-child(1) {
-  -webkit-transform: translate(-50%, calc(-50% - 8px));
-          transform: translate(-50%, calc(-50% - 8px));
+  -webkit-transform: translate(-50%, calc(-50% - .5em));
+          transform: translate(-50%, calc(-50% - .5em));
 }
 
 .hamburger__patty:last-child {
-  -webkit-transform: translate(-50%, calc(-50% + 8px));
-          transform: translate(-50%, calc(-50% + 8px));
+  -webkit-transform: translate(-50%, calc(-50% + .5em));
+          transform: translate(-50%, calc(-50% + .5em));
 }
 
 .hamburger.active .hamburger__patty {
@@ -310,26 +311,26 @@ body {
 }
 
 .contact {
+  font-size: 8px;
   width: 100%;
   background-color: #333F4F;
   text-align: center;
-  padding: 70px 0 50px 0;
+  padding: 4em 0 3em 0;
 }
 
 .contact__message {
   color: #c7c5ca;
-  font-size: 40px;
-  margin-bottom: 30px;
+  font-size: 2.5em;
+  margin-bottom: 2em;
 }
 
 .contact__email-btn {
-  color: #fff;
+  color: #F1F2F3;
   background-color: #f46674;
-  padding: 12px 30px;
+  padding: 1em 1.5em;
   display: inline-block;
   border-radius: 6px;
-  font-size: 28px;
-  width: 240px;
+  font-size: 1.5em;
 }
 
 .contact__email-btn span {
@@ -361,6 +362,7 @@ body {
 
 .contact__social-icons {
   margin-top: 50px;
+  padding-left: 0;
 }
 
 .contact__social-icons li {
@@ -374,7 +376,7 @@ body {
 
 .contact__social-icons li i {
   color: #c3c3cb;
-  font-size: 34px;
+  font-size: 2em;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -451,9 +453,6 @@ body {
     right: 20%;
   }
   .nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
@@ -464,37 +463,14 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
     height: 8em;
-    z-index: 1;
-    background: #333F4F;
-    -webkit-clip-path: circle(29px at calc(100% - 5vw - 30px) calc(5vh + 30px));
-            clip-path: circle(29px at calc(100% - 5vw - 30px) calc(5vh + 30px));
-    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
   .nav.active {
     -webkit-clip-path: circle(75% at 50% 10%);
             clip-path: circle(75% at 50% 10%);
   }
   .nav__link {
-    display: block;
     font-size: 1.5em;
-    font-weight: 400;
-    text-transform: capitalize;
-    letter-spacing: -1px;
-    text-align: left;
-    padding: 1vh 1vw;
-    color: white;
-    text-decoration: none;
-    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    opacity: 0;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
   }
   .nav__link:nth-child(1) {
     -webkit-transition-delay: 0.05s;
@@ -517,64 +493,9 @@ body {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
-  .hamburger {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    position: fixed;
-    z-index: 1;
-    top: 5vh;
-    right: 5vw;
-    background: #333F4F;
-    -webkit-transition: ease .2s;
-    transition: ease .2s;
-  }
-  .hamburger__patty {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    height: 2px;
-    width: 50%;
-    background-clip: padding-box;
-    background: #f7f7f7;
-    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-  .hamburger__patty:nth-child(1) {
-    -webkit-transform: translate(-50%, calc(-50% - 8px));
-            transform: translate(-50%, calc(-50% - 8px));
-  }
-  .hamburger__patty:last-child {
-    -webkit-transform: translate(-50%, calc(-50% + 8px));
-            transform: translate(-50%, calc(-50% + 8px));
-  }
-  .hamburger.active .hamburger__patty {
-    background: white;
-  }
-  .hamburger.active .hamburger__patty:nth-child(1) {
-    -webkit-transform: translate(-50%, -50%) rotate(45deg);
-            transform: translate(-50%, -50%) rotate(45deg);
-  }
-  .hamburger.active .hamburger__patty:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .hamburger__patty:nth-child(3) {
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-            transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  .hamburger:hover {
-    -webkit-transition: ease .2s;
-    transition: ease .2s;
-    background-color: #12152b;
-  }
 }
 
 @media screen and (min-width: 992px) {
-  /* réduire la taille des liens de la navbar */
-  /* fixer la taille des projets pour que le menu ne se superpose pas */
   .nav__link {
     font-size: 2em;
     padding: 1vh 2vw;
@@ -586,6 +507,10 @@ body {
     font-size: 5em;
     bottom: 30%;
     right: 20%;
+  }
+  /* j'augmente la taille de référence de la police (em) */
+  .contact {
+    font-size: 12px;
   }
 }
 
@@ -617,6 +542,43 @@ body {
   .nav__link.active {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+  .contact {
+    font-size: 16px;
+  }
+}
+
+/* ajout d'une règle pour gérer le menu latéral fixe sur les écrans très larges */
+@media screen and (min-width: 1920px) {
+  .nav, .hamburger {
+    left: calc((50% + 960px) - 7.6em);
+    top: 6em;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .nav {
+    -webkit-clip-path: circle(29px at calc(100% - 6em - 30px) calc(30px));
+            clip-path: circle(29px at calc(100% - 6em - 30px) calc(30px));
+    /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
+  }
+  .nav.active {
+    top: -6em;
+  }
+  .hamburger__fixed-menu {
+    position: relative;
+  }
+  .hamburger__patty {
+    position: absolute;
+    top: 1.8em;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 2px;
+    width: 50%;
+    background-clip: padding-box;
+    background: #f7f7f7;
+    -webkit-transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 }
 /*# sourceMappingURL=style.css.map */

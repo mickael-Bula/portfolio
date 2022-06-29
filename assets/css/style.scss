@@ -18,6 +18,7 @@ body {
 }
 
 .wrapper {
+    /* je fixe une taille max à la page pour éviter de trop étirer le design */
     max-width: 1920px;
     min-height: 380px;
     margin: 0 auto;
@@ -153,11 +154,11 @@ body {
             transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
         
         &:nth-child(1) {
-            transform: translate(-50%, calc(-50% - 8px));
+            transform: translate(-50%, calc(-50% - .5em));
             }
         
         &:last-child {
-            transform: translate(-50%, calc(-50% + 8px));
+            transform: translate(-50%, calc(-50% + .5em));
             }
         }
         
@@ -244,25 +245,25 @@ body {
 }
 
 .contact {
+    font-size: 8px;
     width: 100%;
     background-color: $navBarBgColor;
     text-align: center;
-    padding: 70px 0 50px 0;
+    padding: 4em 0 3em 0;
 
     &__message {
         color: #c7c5ca;
-        font-size: 40px;
-        margin-bottom: 30px;
+        font-size: 2.5em;
+        margin-bottom: 2em;
     }
 
     &__email-btn {
-        color: #fff;
+        color: #F1F2F3;
         background-color: #f46674;
-        padding: 12px 30px;
+        padding: 1em 1.5em;
         display: inline-block;
         border-radius: 6px;
-        font-size: 28px;
-        width: 240px;
+        font-size: 1.5em;
 
         & span {
             cursor: pointer;
@@ -292,6 +293,7 @@ body {
 
     &__social-icons {
         margin-top: 50px;
+        padding-left: 0;
 
         & li  {
             display: inline-block;
@@ -304,7 +306,7 @@ body {
 
         & li i {
             color: #c3c3cb;
-            font-size: 34px;
+            font-size: 2em;
             transition: all 0.3s;
         }
 
@@ -357,37 +359,17 @@ body {
         }
     }
     .nav {
-        display: flex;
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
         height: 8em;
-        z-index: 1;
-        background: $navBarBgColor;
-        clip-path: circle(29px at calc(100% - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
-        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
         
         &.active {
             clip-path: circle(75% at 50% 10%);
         }
         
         &__link {
-            display: block;
             font-size: 1.5em;
-            font-weight: 400;
-            text-transform: capitalize;
-            letter-spacing: -1px;
-            text-align: left;
-            padding: 1vh 1vw;
-            color: white;
-            text-decoration: none;
-            transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
-            opacity: 0;
-            transform: translateX(50%);
             
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
@@ -401,69 +383,9 @@ body {
             }
         }
     }
-        
-        .hamburger {
-            $p: &;
-            width: $hamburgerSize;
-            height: $hamburgerSize;
-            border-radius: 50%;
-            cursor: pointer;
-            position: fixed;
-            z-index: 1;
-            top: 5vh;
-            right: 5vw;
-            background: $navBarBgColor;
-            transition: ease .2s;
-            
-            &__patty {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 2px;
-                width: 50%;
-                background-clip: padding-box;
-                background: darken(white, 3);
-                transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
-            
-            &:nth-child(1) {
-                transform: translate(-50%, calc(-50% - 8px));
-                }
-            
-            &:last-child {
-                transform: translate(-50%, calc(-50% + 8px));
-                }
-            }
-            
-            &.active {            
-                #{$p}__patty {
-                    background: white;
-                    
-                    &:nth-child(1) {
-                    transform: translate(-50%, -50%) rotate(45deg);
-                    }
-                    
-                    &:nth-child(2) {
-                    opacity: 0;
-                    }
-                    
-                    &:nth-child(3) {
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                    }
-                }
-            }
-    
-            &:hover {
-                transition: ease .2s;
-                background-color: $navBarBgColorHover;
-            }
-        }
 }
 
 @media screen and (min-width:992px) {
-
-    /* réduire la taille des liens de la navbar */
-    /* fixer la taille des projets pour que le menu ne se superpose pas */
     
     .nav {        
         &__link {
@@ -481,6 +403,11 @@ body {
             bottom: 30%;
             right: 20%;
         }
+    }
+
+    /* j'augmente la taille de référence de la police (em) */
+    .contact {
+        font-size: 12px;
     }
 }
 
@@ -507,6 +434,46 @@ body {
             &.active {
                 transform: translateY(0);
             }
+        }
+    }
+
+    .contact {
+        font-size: 16px;
+    }
+}
+
+/* ajout d'une règle pour gérer le menu latéral fixe sur les écrans très larges */
+@media screen and (min-width: 1920px) {
+
+    .nav, .hamburger {
+        left: calc((50% + 960px) - 7.6em);
+        top: 6em;
+        transform: translateX(-50%);
+    }
+
+    .nav {
+        clip-path: circle(29px at calc(100% - 6em - #{$hamburgerSize / 2}) calc(#{$hamburgerSize / 2}));
+        /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
+        &.active {
+            top: -6em;
+        }
+    }
+    
+    .hamburger {
+        &__fixed-menu {
+            position: relative;
+        }
+
+        &__patty {
+            position: absolute;
+            top: 1.8em;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 2px;
+            width: 50%;
+            background-clip: padding-box;
+            background: darken(white, 3);
+            transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
         }
     }
 }
