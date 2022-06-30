@@ -187,9 +187,11 @@ body {
     }
 
 .projects {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     &__title {
         font-size: 3em;
@@ -198,14 +200,12 @@ body {
 
     &__cards {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         margin: auto;
-        justify-content: center;
         align-items: center;
 
         &--teaser, &--stack {
-            display: flex;
-            justify-content: center;
+            text-align: center;
             font-size: 1.1em;
         }
         
