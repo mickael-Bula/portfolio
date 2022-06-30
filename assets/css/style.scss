@@ -345,6 +345,7 @@ body {
 
 /* RESPONSIVE */
 
+/* à partir de 700px, le menu de navigation vertical devient horizontal */
 @media screen and (min-width:700px) {
 
     .banner {   
@@ -366,21 +367,6 @@ body {
         
         &.active {
             clip-path: circle(75% at 50% 10%);
-        }
-        
-        &__link {
-            font-size: 1.5em;
-            
-            @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
-                transition-delay: $i * 0.05s;
-                }
-            }
-            
-            &.active {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
     }
 }
@@ -411,6 +397,7 @@ body {
     }
 }
 
+/* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
 @media screen and (min-width: 1400px) {
     
     .nav {
@@ -443,7 +430,7 @@ body {
 }
 
 /* ajout d'une règle pour gérer le menu latéral fixe sur les écrans très larges */
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1922px) {
 
     .nav, .hamburger {
         left: calc((50% + 960px) - 7.6em);
@@ -452,6 +439,7 @@ body {
     }
 
     .nav {
+        height: calc(100vh + 10em);
         clip-path: circle(29px at calc(100% - 6em - #{$hamburgerSize / 2}) calc(#{$hamburgerSize / 2}));
         /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
         &.active {
