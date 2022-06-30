@@ -28,15 +28,17 @@ const app = {
                 
             // on récupère les coordonnées géographique en fonction de l'adresse IP
             cityData = await app.getCity(ip);
-            city = cityData.data.location.city.name;
-            latitude = cityData.data.location.latitude;
-            longitude = cityData.data.location.longitude;            
+
+            // j'entoure le destructuring de parenthèses pour que la partie gauche ne soit pas considérée comme un bloc
+            ({ latitude, longitude } = cityData.data.location);
+            city = cityData.data.location.city.name;        
         } else {
             cityData = await app.getCoordinates(city);
-            city = cityData[0].name;
-            latitude = cityData[0].lat;
-            longitude = cityData[0].lon;
+            
+            // je renomme les variables reçues par destructuration ({ancien_nom: nouveau_nom})
+            ({ name: city, lat: latitude, lon: longitude } = cityData[0]);
         }
+
         // on affiche le nom de la ville et on efface la valeur de l'input
         document.getElementById("city").textContent = city.toUpperCase();
         document.querySelector("#ville").value = "";
