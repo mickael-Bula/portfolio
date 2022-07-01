@@ -64,7 +64,7 @@ const app = {
 
     getCoordinates: async function(city) {
         // récupération des coordonnées d'une ville à partir de son nom
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${config.APIKey}`);
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${config.APIKey}`);
         return await response.json();
     },
     
