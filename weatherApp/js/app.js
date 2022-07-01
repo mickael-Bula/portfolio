@@ -1,6 +1,3 @@
-// import config from './config.js';
-// import weatherIcons from './data.js';
-
 const app = {
 
     init: function()
@@ -8,7 +5,7 @@ const app = {
         const city = document.querySelector("#ville");
         city.addEventListener("click", app.handleClick);
         city.addEventListener("keydown", app.handleKeydown);
-
+        
         app.main();
     },
 
