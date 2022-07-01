@@ -27,13 +27,9 @@ const app = {
                 
             // on récupère les coordonnées géographique en fonction de l'adresse IP
             cityData = await app.getCity(ip);
-            if (cityData.status === "success") {
-                // j'entoure le destructuring de parenthèses pour que la partie gauche ne soit pas considérée comme un bloc
-                ({ city, lat: latitude, lon: longitude } = cityData);
-            } else {
-                console.log("problème lors de la récupration des données : " + cityData.message);
-                // on pourra mettre ici une valeur par défaut, par exemple Paris -> il faut penser que les données de géolocalisation seront demandées...
-            }
+
+            // j'entoure le destructuring de parenthèses pour que la partie gauche ne soit pas considérée comme un bloc
+            ({ city, latitude, longitude } = cityData);
         } else {
             cityData = await app.getCoordinates(city);
             
@@ -59,8 +55,17 @@ const app = {
     },
     
     getCity: async function(ip) {
-        // on récupère les coordonnées géographique en fonction de l'adresse IP grâce à l'API ip-api (https://ip-api.com/docs/api:json)
-        const city_response = await fetch(`http://ip-api.com/json/?${ip}`);
+        const myHeaders = new Headers();
+        myHeaders.append("apikey", config.ip_APIKey);
+
+        const requestOptions = {
+            method: 'GET',
+            redirect: 'follow',
+            headers: myHeaders
+          };
+          
+        // on récupère les coordonnées géographique en fonction de l'adresse IP grâce à l'API apilayer (https://apilayer.com/marketplace/ip_to_location-api)
+        const city_response = await fetch(`https://api.apilayer.com/ip_to_location/${ip}`, requestOptions);
         return await city_response.json();
     },
 
