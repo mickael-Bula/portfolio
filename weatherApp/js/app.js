@@ -60,7 +60,7 @@ const app = {
     
     getCity: async function(ip) {
         // on récupère les coordonnées géographique en fonction de l'adresse IP grâce à l'API ip-api (https://ip-api.com/docs/api:json)
-        const city_response = await fetch(`http://ip-api.com/json/?fields${ip}`);
+        const city_response = await fetch(`http://ip-api.com/json/?${ip}`);
         return await city_response.json();
     },
 
