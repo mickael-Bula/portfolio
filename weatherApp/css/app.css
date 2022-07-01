@@ -96,8 +96,8 @@ body {
   padding: 15px 20px;
   margin-left: 15px;
   border-radius: 5px;
-  background: var(--red);
-  transition: background 0.3s ease-in-out;
+  background-color: var(--red);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .top-banner form button:hover {
@@ -112,38 +112,31 @@ body {
   min-height: 40px;
 }
 
-/* cards */
+/* CARDS */
 
 .cards {
     margin: 70px 0 20px;
   }
 
 .card {
-    width: 330px;
-    height: 350px;
-    background: #F1F2F3;
-    border-radius: 10px;
-    padding: 1em;
-}
-
-.card .city {
     position: relative;
-    padding: 40px 10%;
-    border-radius: 20px;
+    width: fit-content;
+    padding: 2em;
+    border-radius: 1em;
     background: var(--text_light);
     color: var(--text_med);
   }
   
-  .card .city::after {
+.card::after {
     content: '';
     width: 90%;
-    height: 50px;
+    height: 3em;
     position: absolute;
-    bottom: -12px;
+    bottom: -.8em;
     left: 5%;
     z-index: -1;
     opacity: 0.3;
-    border-radius: 20px;
+    border-radius: 1em;
     background: var(--text_light);
   }
   
