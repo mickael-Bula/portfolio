@@ -1,5 +1,5 @@
-import config from './config.js';
-import weatherIcons from './data.js';
+// import config from './config.js';
+// import weatherIcons from './data.js';
 
 const app = {
 
