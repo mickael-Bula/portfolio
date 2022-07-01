@@ -25,16 +25,20 @@ const app = {
                 
             // on récupère les coordonnées géographique en fonction de l'adresse IP
             cityData = await app.getCity(ip);
-
-            // j'entoure le destructuring de parenthèses pour que la partie gauche ne soit pas considérée comme un bloc
-            ({ latitude, longitude } = cityData.data.location);
-            city = cityData.data.location.city.name;        
+            if (cityData.status === "success") {
+                // j'entoure le destructuring de parenthèses pour que la partie gauche ne soit pas considérée comme un bloc
+                ({ city, lat: latitude, lon: longitude } = cityData);
+            } else {
+                console.log("problème lors de la récupration des données : " + cityData.message);
+                // on pourra mettre ici une valeur par défaut, par exemple Paris -> il faut penser que les données de géolocalisation seront demandées...
+            }
         } else {
             cityData = await app.getCoordinates(city);
             
             // je renomme les variables reçues par destructuration ({ancien_nom: nouveau_nom})
             ({ name: city, lat: latitude, lon: longitude } = cityData[0]);
         }
+        console.log(city, longitude, latitude);
 
         // on affiche le nom de la ville et on efface la valeur de l'input
         document.getElementById("city").textContent = city.toUpperCase();
@@ -50,16 +54,15 @@ const app = {
     
     getIp: async function() {
         // récupération de l'adresse IP de l'utilisateur par l'intermédiaire de l'API ipify
-        const response = await fetch('https://api.ipify.org?format=json', app.fetchOptions);  // la requête est au format json. Attention : c'est une promesse que l'on reçoit
-        const response_json = await response.json();         // on applique la méthode json() à la résolution de la requête (qui était au format json)
-        return response_json.ip;              // on attend la résolution de la promesse renvoyée par la méthode json() pour obtenir l'IP
+        const response = await fetch('https://api.ipify.org?format=json', app.fetchOptions);
+        const response_json = await response.json();
+        return response_json.ip;
     },
     
     getCity: async function(ip) {
-        // on récupère les coordonnées géographique en fonction de l'adresse IP grâce à l'API freegeoip (changement de nom de domaine pour 'app.ipbase.com')
-        const city_response = await fetch(`https://api.ipbase.com/v2/info?ip=${ip}&apikey=${config.API_Key2}`, app.fetchOptions);
-        const city_json = await city_response.json();
-        return city_json;
+        // on récupère les coordonnées géographique en fonction de l'adresse IP grâce à l'API ip-api (https://ip-api.com/docs/api:json)
+        const city_response = await fetch(`http://ip-api.com/json/?fields${ip}`);
+        return await city_response.json();
     },
 
     getCoordinates: async function(city) {
@@ -91,7 +94,7 @@ const app = {
     // on exécute la méthode main() si la touche tapée est 'Enter' (pour ne pas avoir à ajouter un bouton de soumission)
     handleKeydown: function(event)
     {
-        // Si la clé est Entrée
+        // Si la touche saisie est Entrée
         if(event.key === 'Enter')
         {
             // On exécute la méthode main() en lui transmettant la ville saisie en paramètre
