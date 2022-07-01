@@ -1,14 +1,16 @@
 const app = {
-
+    
     init: function()
     {
-        const city = document.querySelector("#ville");
-        city.addEventListener("click", app.handleClick);
-        city.addEventListener("keydown", app.handleKeydown);
-        
+        app.form.addEventListener("submit", app.handleSubmit);
+        app.city.addEventListener("click", app.handleClick);        
         app.main();
     },
+    
+    form: document.querySelector(".form"),
 
+    city: document.querySelector("#ville"),
+    
     fetchOptions: {
         method: 'GET',
         mode:   'cors',
@@ -39,14 +41,11 @@ const app = {
             ({ name: city, lat: latitude, lon: longitude } = cityData[0]);
         }
         console.log(city, longitude, latitude);
-
-        // on affiche le nom de la ville et on efface la valeur de l'input
-        document.getElementById("city").textContent = city.toUpperCase();
-        document.querySelector("#ville").value = "";
             
         // on récupère ensuite les données météo sur l'API openweathermap
         const meteo_response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${config.APIKey}&lang=fr&units=metric`, app.fetchOptions);
         const meteo = await meteo_response.json();
+        console.log(meteo);
         
         // on affiche les données
         this.displayWeatherInfos(meteo);
@@ -73,33 +72,35 @@ const app = {
     
     displayWeatherInfos: function(data)
     {
+        const name = data.name;
+        const country = data.sys.country;
         const temperature = data.main.temp;
-        const conditions = data.weather[0].main;
         const description = data.weather[0].description;
+        const weather = data.weather;
+        const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
         
-        document.querySelector("#temperature").textContent = Math.round(temperature);
-        document.querySelector("#conditions").textContent = this.capitalize(description);
-        document.querySelector("i.wi").className = weatherIcons[conditions];   // on récupère la bonne icône dans le fichier data.json
-        
-        // on lie les images de fond aux conditions météo à partir d'une banque d'images
-        document.body.className = conditions.toLowerCase();
+        document.querySelector(".city-name").dataset.name = `${name}, ${country}`;
+        document.querySelector(".city-name__name").textContent = name;
+        document.querySelector(".city-name__country").textContent = country;
+        document.querySelector(".city-temp").textContent = Math.round(temperature) + "";
+        document.querySelector(".city-icon").src = icon;
+        document.querySelector(".city-icon").alt = description;
+        document.querySelector(".city-icon__description").textContent = description;
+    },
+
+    handleSubmit: function(event) {
+        event.preventDefault();
+        // On exécute la méthode main() en lui transmettant la ville saisie en paramètre
+        app.main(app.city.value);
+        app.form.reset();
+        app.city.focus();
     },
     
     // bonus UX : au clic on vide le champ de l'input en vue d'une nouvelle saisie
-    handleClick: function(event)
+    handleClick: function()
     {
-        event.currentTarget.value = "";
-    },
-    
-    // on exécute la méthode main() si la touche tapée est 'Enter' (pour ne pas avoir à ajouter un bouton de soumission)
-    handleKeydown: function(event)
-    {
-        // Si la touche saisie est Entrée
-        if(event.key === 'Enter')
-        {
-            // On exécute la méthode main() en lui transmettant la ville saisie en paramètre
-            app.main(event.currentTarget.value);
-        }
+        app.form.reset();
+        app.city.focus();        
     },
     
     capitalize: function(str)
@@ -113,7 +114,6 @@ const app = {
 document.addEventListener('DOMContentLoaded', app.init);
 
 // TODO : utiliser les données de géolocalisation plutôt que l'ip : c'est non seulement une bonne pratique mais cela prend aussi en compte l'éventuelle utilisation d'un VPN
-// ajouter du mouvement aux images en backgrounds
 // compléter les conditions météo
 // créer des thèmes pour les photos (mangas par exemple)
 // compléter les infos météo (taux d'humidité...)
@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', app.init);
 // ajouter des villes en favoris
 // ajouter une carte du pays, cliquable et qui zoome sur la région et affiche dynamiquement les conditions (utiliser openweathermap et géoloc)
 // ajouter Bootstrap pour ajouter le responsive facilement
-// ajouter des tuiles (s'inspirer de l'app météo France : https://www.01net.com/astuces/5-applications-meteo-gratuites-pour-android-et-iphone-1141144.html)
 
 // TODO : adapter ce code - une fois fonctionnel - à un design plus moderne, avec le tuto tutsplus (https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893)
 // TODO : ajouter les prévisions à 5 jours (https://openweathermap.org/forecast5)
