@@ -30,11 +30,11 @@
     <header class="header">
             <!-- la navbar latérale -->
             <nav class="nav">
-                <a href="#" class="nav__link">Accueil</a>
-                <a href="#projects" class="nav__link">Projets</a>
-                <a href="#labs" class="nav__link">labs</a>
-                <a href="#about" class="nav__link">A propos</a>
-                <a href="#contact" class="nav__link">Contact</a>
+                <a href="#" class="nav__link">accueil</a>
+                <a href="#about" class="nav__link">mon profil</a>
+                <a href="#projects" class="nav__link">réalisations</a>
+                <a href="#labs" class="nav__link">côté labo</a>
+                <a href="#contact" class="nav__link">contact</a>
             </nav>
     </header>
         
@@ -47,32 +47,47 @@
         </div>
     </div>
 
-    <section id="projects">
-        <div class="projects">
-            <h1 class="projects__title">Projets réalisés</h1>
+    <section id="about" class="dark-blue">
+        <div class="about container">
+            <h2 class="title">Bienvenue !</h2>
+            <h1 class="regular">Je m'appelle Mickaël, je suis développeur web spécialisé en backend et plus particulièrement en Symfony.</h1>
+            <p class="regular">Je me consacre au développement web depuis maintenant deux ans. D'abord autodidacte, je me suis formé auprès de l'école O'Clock durant 6 mois au Titre Professionnel de Développeur Web et Web Mobile, titre que j'ai obtenu en juin 2022.</p>
+            <p class="regular">Je suis fier et heureux de vous présenter ce portfolio qui vous permettra de jauger mes compétences.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="light-gray">
+        <div class="projects container">
+            <h2 class="projects__title">Projets réalisés</h2>
             <div class="projects__cards">
                 <div class="projects__card--container">
-                    <a href="https://culturecityapp.simschab.fr/">
-                        <article class="projects__cards--leaning reveal"><img src="assets/images/screenshot-culturecityapp.png" alt="capture d'écran du site culture-city-app"></article>
+                    <a class="reveal" href="https://culturecityapp.simschab.fr/">
+                        <article class="projects__cards--leaning"><img src="assets/images/screenshot-culturecityapp.png" alt="capture d'écran du site culture-city-app"></article>
                     </a>
                     <p class="projects__cards--teaser">HTML Sass Javascript PHP Symfony MariaDB</p>
                     <p class="projects__cards--stack">HTML CSS JS PHP Symfony SQL</p>
                 </div>            
                 <div class="projects__cards--container">
-                    <a href="https://mickael-bula.github.io/to-do-list/">
-                        <article class="projects__cards--leaning reveal"><img src="assets/images/todolist.png" alt="capture d'écran de la todolist"></article>
+                    <a class="reveal" href="https://mickael-bula.github.io/to-do-list/">
+                        <article class="projects__cards--leaning"><img src="assets/images/todolist.png" alt="capture d'écran de la todolist"></article>
                     </a>        
                     <p class="projects__cards--teaser">todolist avec persistance des données dans le Localstorage</p>
                     <p class="projects__cards--stack">HTML CSS JS</p>
                 </div>
                 <div class="projects__cards--container">
-                    <a href="https://mickael-bula.github.io/weatherApp/">
-                        <article class="projects__cards--leaning reveal"><img src="assets/images/weatherApp.png" alt="capture d'écran de l'application météo'"></article>
+                    <a class="reveal" href="https://mickael-bula.github.io/weatherApp/">
+                        <article class="projects__cards--leaning"><img src="assets/images/weatherApp.png" alt="capture d'écran de l'application météo'"></article>
                     </a>        
                     <p class="projects__cards--teaser">application météo récupérant les données de l'API OpenWeatherMap et réalisée en pur Javascript </p>
                     <p class="projects__cards--stack">HTML CSS JS</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="labs">
+        <div class="labs container">
+            <h2 class="labs__title title">Laboratoire</h2>
         </div>
     </section>
 
