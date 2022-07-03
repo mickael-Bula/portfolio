@@ -68,6 +68,10 @@ h1 {
   background-color: #c7c5ca;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .banner {
   position: relative;
   width: 100vw;
@@ -304,37 +308,20 @@ h1 {
   /* j'ajoute au survol un effet 'planant' avec un zoom et une ombre assez claire */
 }
 
-.projects__cards--teaser, .projects__cards--stack {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 1.1em;
-}
-
 .projects__cards--project {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 100%;
 }
 
 .projects__cards--container {
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
+  width: 50%;
 }
 
 .projects__cards--description {
   width: 50%;
-  padding-left: 2em;
+  padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,6 +332,15 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 1.4em;
+}
+
+.projects__cards--icons {
+  text-align: center;
+}
+
+.projects__cards a {
+  padding: 0 .5em;
 }
 
 .projects__cards--leaning {

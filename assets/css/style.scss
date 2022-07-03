@@ -68,6 +68,10 @@ h1 {
     background-color: #c7c5ca;
 }
 
+.bold {
+    font-weight: 600;
+}
+
 .banner {
     position: relative;
     width: 100vw;
@@ -246,28 +250,30 @@ h1 {
         margin: auto;
         align-items: center;
 
-        &--teaser, &--stack {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: 1.1em;
-        }
-
         &--project {
             display: flex;
-            justify-content: center;
+            width: 100%;
         }
         /* il faut voir pq la taille appliquée n'est pas de 50% */
         &--container {
-            flex-basis: auto;
+            width: 50%;
         }
 
         &--description {
             width: 50%;
-            padding-left: 2em;
+            padding: 2em;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            font-size: 1.4em;
+        }
+
+        &--icons {
+            text-align: center;
+        }
+
+        & a {
+            padding: 0 .5em;
         }
         
         &--leaning {
