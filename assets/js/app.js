@@ -22,7 +22,7 @@ function reveal() {
 
   // on récupère la taille de l'écran et on fixe une hauteur pour l'apparition des  éléments
   const windowHeight = window.innerHeight;
-  let elementVisible = 100;
+  const elementVisible = 50;
 
   // on boucle sur les éléments pour vérifier si la hauteur a été atteinte pour ajouter la classe .show ou la supprimer
   for (const reveal of reveals) {
@@ -31,3 +31,5 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+// TODO : à transformer en module

@@ -53,10 +53,18 @@ h1 {
     text-align: justify;
 }
 
-.icon  {
-    font-size: 2em;
-    font-weight: 400;
+.icon, .icon:visited {
     color: $navBarBgColorHover;
+    font-weight: 400;
+    border-radius: 100%;
+    padding: .2em;
+    transition: .5s background-color;
+    margin-left: .5em;
+}
+
+.icon:hover {
+    transition: .5s background-color;
+    background-color: #9bbbd3;
 }
 
 .dark-blue {
@@ -238,70 +246,72 @@ h1 {
 }
 
 .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__title {
+        text-align: center;
         font-size: 3em;
-        font-weight: 300;
+        font-weight: 400;
     }
 
-    &__cards {
+    &__card {
         display: flex;
         flex-direction: column;
-        margin: auto;
-        align-items: center;
-
-        &--project {
-            display: flex;
-            width: 100%;
-        }
-        /* il faut voir pq la taille appliquée n'est pas de 50% */
-        &--container {
-            width: 50%;
-        }
-
-        &--description {
-            width: 50%;
-            padding: 2em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: 1.4em;
+        
+        &--thumbnail {
+            width: 300px;
+            height: 300px;
+            margin-top: 3em;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 1px 1px 5px #696969;
+    
+            &:hover {
+                transform: scale(1.01);
+                box-shadow: 0px 0px 35px #696969;
+            }
         }
 
         &--icons {
-            text-align: center;
-        }
+            display: block;
+            text-align: right;
+            padding: .5em 0;
+            font-size: 1em;
+            color: #12152b;
 
-        & a {
-            padding: 0 .5em;
+            & a, a:visited {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+        &--leaning {
+            width: 400px;
+            border-radius: 5px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        
+        &--title {
+            font-size: 3em;
+            font-weight: 400;
+            padding: 0 0 .5em 0;
+            margin: 1em 0 0 0;
         }
         
-        &--leaning {
-            margin: 4em auto 1em auto;
-            width: 400px;
-            height: 400px;
-            border: 0px solid rgb(51, 48, 48);
-            border-radius: 5px;
-            transition: all 0.5s ease;
-            box-shadow: 1px 1px 5px #696969;
-            overflow: hidden;
+        &--description {
+            max-width: 300px;
         }
-    
-        /* j'ajoute au survol un effet 'planant' avec un zoom et une ombre assez claire */
-        &--leaning:hover {
-            transform: scale(1.01);
-            box-shadow: 0px 0px 35px #696969;
-        }
-
-        & img {
-            max-width: 400px;
-        }
-    }        
+    }
 }
 
 .reveal {
     position: relative;
-    transform: translateY(100px);
+    transform: translateY(50px);
     opacity: 0;
     transition: 1s all ease;
 }
@@ -412,6 +422,26 @@ h1 {
 
 /* RESPONSIVE */
 
+@media screen and (min-width: 600px) {
+
+    .projects__title {
+        font-size: 4em;
+    }
+
+    .projects__card--thumbnail {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .projects__container--description {
+        max-width: 400px;
+
+        & p {
+            font-size: 1.2em;
+        }
+    }
+}
+
 /* à partir de 700px, le menu de navigation vertical devient horizontal */
 @media screen and (min-width:700px) {
 
@@ -461,6 +491,21 @@ h1 {
     /* j'augmente la taille de référence de la police (em) */
     .contact {
         font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .projects {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+        align-items: flex-start;
+    }
+    
+    .projects__container--city-app, .projects__container--todolist, .projects__container--weatherApp {
+        align-items: flex-end;
     }
 }
 
