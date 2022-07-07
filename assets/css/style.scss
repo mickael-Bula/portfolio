@@ -83,7 +83,7 @@ h1 {
 .banner {
     position: relative;
     width: 100vw;
-    max-width: 1920px;
+    max-width: 1900px;
     height: 100vh;
     overflow: hidden;
     
@@ -507,6 +507,23 @@ h1 {
     .projects__container--city-app, .projects__container--todolist, .projects__container--weatherApp {
         align-items: flex-end;
     }
+
+    .projects__container--city-app, .projects__container--one {
+        order: -2;
+    }
+
+    .projects__container--two {
+        order: -1;
+        align-items: flex-end;
+
+        & .projects__container--description {
+            text-align: right;
+        }
+    }
+
+    .projects__container--todolist {
+        align-items: flex-start;
+    }
 }
 
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
@@ -542,7 +559,7 @@ h1 {
 }
 
 /* ajout d'une règle pour gérer le menu latéral fixe sur les écrans très larges */
-@media screen and (min-width: 1922px) {
+@media screen and (min-width: 1902px) {
 
     .nav, .hamburger {
         left: calc((50% + 960px) - 7.6em);

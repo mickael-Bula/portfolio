@@ -85,7 +85,7 @@ h1 {
 .banner {
   position: relative;
   width: 100vw;
-  max-width: 1920px;
+  max-width: 1900px;
   height: 100vh;
   overflow: hidden;
 }
@@ -612,6 +612,27 @@ h1 {
         -ms-flex-align: end;
             align-items: flex-end;
   }
+  .projects__container--city-app, .projects__container--one {
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+  }
+  .projects__container--two {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .projects__container--two .projects__container--description {
+    text-align: right;
+  }
+  .projects__container--todolist {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
@@ -650,7 +671,7 @@ h1 {
 }
 
 /* ajout d'une règle pour gérer le menu latéral fixe sur les écrans très larges */
-@media screen and (min-width: 1922px) {
+@media screen and (min-width: 1902px) {
   .nav, .hamburger {
     left: calc((50% + 960px) - 7.6em);
     top: 6em;
