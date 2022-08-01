@@ -607,7 +607,7 @@ h1 {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  .projects__container--city-app, .projects__container--todolist, .projects__container--weatherApp {
+  .projects__container--city-app, .projects__container--weatherApp {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
