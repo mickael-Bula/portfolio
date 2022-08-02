@@ -26,10 +26,10 @@ function reveal() {
 
   // on boucle sur les éléments pour vérifier si la hauteur a été atteinte pour ajouter la classe .show ou la supprimer
   for (const reveal of reveals) {
-    (reveal.getBoundingClientRect().top < windowHeight - elementVisible) ? reveal.classList.add("show") : reveal.classList.remove("show");
+    reveal.getBoundingClientRect().top < windowHeight - elementVisible
+      ? reveal.classList.add("show")
+      : reveal.classList.remove("show");
   }
 }
 
 window.addEventListener("scroll", reveal);
-
-// TODO : à transformer en module

@@ -357,10 +357,13 @@ h1 {
 
 /* LABS */
 .container__labs {
-  width: 41em;
-  /* 6em * 6 éléments + (1em * 5 margin) */
-  height: 6em;
-  margin-top: 2em;
+  width: 90%;
+  height: 40em;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #a3a3a3;
+  overflow: hidden;
 }
 
 .slide {
@@ -409,6 +412,11 @@ h1 {
   }
 }
 /* RESPONSIVE */
+@media screen and (min-width: 516px) {
+  .container__labs {
+    height: 32em;
+  }
+}
 @media screen and (min-width: 600px) {
   .projects__title {
     font-size: 4em;
@@ -424,6 +432,11 @@ h1 {
   }
   .projects__container--description p {
     font-size: 1.2em;
+  }
+
+  .container__labs {
+    width: 90%;
+    height: 24em;
   }
 }
 /* à partir de 700px, le menu de navigation vertical devient horizontal */
@@ -445,6 +458,10 @@ h1 {
   }
   .nav.active {
     clip-path: circle(75% at 50% 10%);
+  }
+
+  .container__labs {
+    height: 16em;
   }
 }
 @media screen and (min-width: 992px) {
@@ -496,6 +513,11 @@ h1 {
     align-items: flex-start;
   }
 }
+@media screen and (min-width: 1050px) {
+  .container__labs {
+    height: 8em;
+  }
+}
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
 @media screen and (min-width: 1400px) {
   .nav {
@@ -516,6 +538,10 @@ h1 {
   }
   .nav__link.active {
     transform: translateY(0);
+  }
+
+  .container__labs {
+    width: 80%;
   }
 
   .contact {

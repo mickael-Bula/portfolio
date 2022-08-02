@@ -4,6 +4,7 @@ const app = {
     app.run();
   },
 
+  // suppression de tous les éléments de la classe .slide
   removeElement: function () {
     Array.from(document.getElementsByClassName("slide")).forEach((el) =>
       el.remove()
@@ -46,9 +47,3 @@ const app = {
 };
 
 document.addEventListener("DOMContentLoaded", app.init);
-
-/*
-  Il faut lier ce script au scroll : quand une limite est atteinte, on lance la méthode showDivs.
- Sinon, si les divs sont affichées on efface.
- Il faut aussi recentrer les divs
-*/
