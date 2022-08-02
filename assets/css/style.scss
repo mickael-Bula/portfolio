@@ -150,7 +150,7 @@ h1 {
     height: 12em;
     z-index: 1;
     background: $navBarBgColor;
-    clip-path: circle(29px at calc(100% - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
+    clip-path: circle(29px at calc(100% - 5vw - calc(#{$hamburgerSize} / 2)) calc(5vh + #{$hamburgerSize} / 2));
     transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
     
     &.active {
@@ -393,6 +393,26 @@ h1 {
     }
 }
 
+/* LABS */
+
+.container__labs {
+    width: 41em;    /* 6em * 6 éléments + (1em * 5 margin) */
+    height: 6em;
+    margin-top: 2em;
+}
+
+.slide {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 6em;
+    height: 6em;
+    background-color: rgb(54, 112, 236);
+    margin: 1em;
+    animation: 0.8s slide;
+}
+
 @keyframes slideInLeft {
     from {        
         left: -100vw;
@@ -419,6 +439,17 @@ h1 {
         opacity: 1;
     }
 }
+
+ @keyframes slide {
+     from {
+        transform: translate3d(0, -100%, 0);
+        opacity: 0;
+     }
+     to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+     }
+ }
 
 /* RESPONSIVE */
 
@@ -535,11 +566,11 @@ h1 {
         width: $navWidth;
         height: 100%;
         background: $navBarBgColor;
-        clip-path: circle(29px at calc(#{$navWidth} - 5vw - #{$hamburgerSize / 2}) calc(5vh + #{$hamburgerSize / 2}));
+        clip-path: circle(29px at calc(#{$navWidth} - 5vw - calc(#{$hamburgerSize} / 2)) calc(5vh + #{$hamburgerSize} / 2));
 
         
         &.active {
-            clip-path: circle(75% at #{$navWidth / 2} 50vh);
+            clip-path: circle(75% at calc(#{$navWidth} / 2) 50vh);
         }
         
         &__link {
@@ -569,7 +600,7 @@ h1 {
 
     .nav {
         height: calc(100vh + 10em);
-        clip-path: circle(29px at calc(100% - 6em - #{$hamburgerSize / 2}) calc(#{$hamburgerSize / 2}));
+        clip-path: circle(29px at calc(100% - 6em - calc(#{$hamburgerSize} / 2)) calc(#{$hamburgerSize} / 2));
         /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
         &.active {
             top: -6em;
