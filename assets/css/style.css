@@ -9,6 +9,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: #c7c5ca;
+  line-height: 1.4;
 }
 
 h1 {
@@ -36,8 +37,15 @@ h1 {
 }
 
 .title {
-  font-weight: 400;
-  font-size: 3em;
+  font-weight: 700;
+  font-size: 4.5em;
+}
+
+.gradient-title {
+  background-image: linear-gradient(45deg, #05619b, #01e396);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .regular {
@@ -47,7 +55,7 @@ h1 {
 }
 
 .icon, .icon:visited {
-  color: #12152b;
+  color: #1F2667;
   font-weight: 400;
   border-radius: 100%;
   padding: 0.2em;
@@ -65,7 +73,7 @@ h1 {
   color: #c7c5ca;
 }
 
-.light-gray {
+.light-grey {
   background-color: #c7c5ca;
 }
 
@@ -231,11 +239,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #1F2667;
 }
 .projects__title {
   text-align: center;
-  font-size: 3em;
-  font-weight: 400;
 }
 .projects__card {
   display: flex;
@@ -258,11 +265,11 @@ h1 {
   text-align: right;
   padding: 0.5em 0;
   font-size: 1em;
-  color: #12152b;
+  color: #1F2667;
 }
 .projects__card--icons a, .projects__card--icons a:visited {
   text-decoration: none;
-  color: #000;
+  color: #1F2667;
 }
 .projects__card--leaning {
   width: 400px;
