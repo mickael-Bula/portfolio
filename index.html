@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/app.js" defer></script>
-    <script src="assets/js/labs.js" defer></script>
+    <script src="assets/js/labs.js"></script>
+    <script src="assets/js/slide.js"></script>
     <title>mon portfolio</title>
 </head>
 <body>
@@ -119,8 +120,111 @@
     <section id="labs" class="section">
         <div class="labs container">
             <h2 class="title labs__title gradient-title">Laboratoire</h2>
+            <p>Bien que développeur spécialisé en back, j'ai également des compétences en front. Je vous en présente ici un échantillon.</p>
+            <h3 class="labs__subtitle">apparition successive d'éléments</h3>
             <div class="container__labs">
+                <!-- divs successifs -->
                 <div id="root"></div>
+            </div>
+            <!-- spinners -->
+            <h3 class="labs__subtitle">spinners</h3>
+            <p class="labs__text">Une des situations classiques à laquelle nous sommes tous confrontés en parcourant des sites Web est le fait de devoir attendre que du contenu soit chargé. Pour gérer ce type de situation, une des solutions les plus simples consiste à utiliser un chargeur - aussi appelé un spinner - pour indiquer aux utilisateurs que quelque chose se charge en arrière-plan. Voici quelques exemples de spinners développés en pur CSS et qui, pour cette raison, se chargent rapidement et sont aisément personnalisables.</p>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 7</div>
+                    <div class="spinner__rotate"></div>
+                    <div class="text">la base : spinner en rotation</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 7</div>
+                    <div class="spinner__comet"></div>
+                    <div class="text">le spinner de base, mais cette fois avec une queue de comète</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 7</div>
+                    <div class="spinner spinner__square"></div>
+                    <div class="text">rotation d'un carré sur deux axes</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">4 / 7</div>
+                    <div class="spinner spinner__audio">
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4"></div>
+                        <div class="rect5"></div>
+                        </div>
+                    <div class="text">spinner vocal</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">5 / 7</div>
+                    <div class="spinner">
+                        <div class="circle-spinner">
+                            <div class="circle1 circle"></div>
+                            <div class="circle2 circle"></div>
+                            <div class="circle3 circle"></div>
+                            <div class="circle4 circle"></div>
+                            <div class="circle5 circle"></div>
+                            <div class="circle6 circle"></div>
+                            <div class="circle7 circle"></div>
+                            <div class="circle8 circle"></div>
+                            <div class="circle9 circle"></div>
+                            <div class="circle10 circle"></div>
+                            <div class="circle11 circle"></div>
+                            <div class="circle12 circle"></div>
+                        </div>
+                    </div>
+                    <div class="text">spinner circulaire qui s'estompe</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">6 / 7</div>
+                    <div class="spinner__dots">
+                        <div class="dot1"></div>
+                        <div class="dot2"></div>
+                        <div class="dot3"></div>
+                        </div>
+                    <div class="text">une ponctuation dynamique...</div>
+                </div>
+    
+                <div class="mySlides fade">
+                    <div class="numbertext">7 / 7</div>
+                    <div class="spinner2 spinner__wheel">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        </div>
+                    <div class="text">spinner roue à eau</div>
+                </div>
+    
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+    
+                <br>
+                
+                <div class="slider-dots">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                </div>
             </div>
         </div>
     </section>

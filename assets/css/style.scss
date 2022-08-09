@@ -1,13 +1,7 @@
+@import 'constantes', 'spinners';
+
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
 /* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
-
-$bgGradient: linear-gradient(to bottom, #e64741 0%,#e6255d 100%,#7db9e8 100%);
-$navWidth: 250px;
-$hamburgerSize: 60px;
-$navBarBgColorHover: #12152b;
-$navBarBgColor: #333F4F;
-$bgLight: #c7c5ca;
-$textBlue: #1F2667;
 
 html {
     scroll-behavior: smooth;
@@ -18,6 +12,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: $bgLight;
     line-height: 1.4;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -260,7 +255,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #1F2667;
+    color: $textBlue;
 
     &__title {
         text-align: center;
@@ -405,11 +400,27 @@ h1 {
 
 /* LABS */
 
+.labs {
+    color: $textBlue;
+
+    &__text {
+        width: 90%;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        font-size: 2em;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+  }
+
 .container__labs {
     width: 90%;
     height: 40em;
     margin: 2em auto;
-    padding: 2em;
+    padding: 2em 0;
+    border: 4px solid #FEA0A7;
     border-radius: 15px;
     box-shadow: 0 0 15px #a3a3a3;
     overflow: hidden;
@@ -620,10 +631,6 @@ h1 {
                 transform: translateY(0);
             }
         }
-    }
-
-    .container__labs {
-        width: 80%;
     }
 
     .contact {
