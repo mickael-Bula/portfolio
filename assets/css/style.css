@@ -586,13 +586,21 @@
 }
 /* STACK
 -------- */
+.section__stack {
+  margin: 0;
+}
+
 .stack {
   position: relative;
   overflow: hidden;
   margin-bottom: -6em;
 }
+.stack__container {
+  width: 100%;
+}
 .stack__title {
-  margin: 0;
+  width: fit-content;
+  margin: auto;
 }
 .stack__bg {
   position: absolute;
@@ -615,7 +623,7 @@
 }
 .stack__banner {
   /* le conteneur qui défile et dont la largeur corrrspond à la somme de ses éléments */
-  height: 180px;
+  height: 170px;
   width: 2200px;
 }
 .stack img {
@@ -646,10 +654,10 @@
 
 @keyframes bannermove {
   0% {
-    margin-left: 100px;
+    margin-left: 50px;
   }
   100% {
-    margin-left: -600px;
+    margin-left: -700px;
   }
 }
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
