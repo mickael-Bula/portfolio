@@ -1,4 +1,4 @@
-@import 'constantes', 'spinners';
+@import 'constantes', 'spinners', 'stack';
 
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
 /* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
@@ -76,10 +76,17 @@ h1 {
     color: $bgLight;
 }
 
-
-
 .light-grey {
-    background-color: #c7c5ca;
+    background-color: $lightGrey;
+}
+
+.light-blue {
+    // background-color: $lightBlue;
+    background-color: $lightBlue;
+}
+
+.light {
+    background-color: $light;
 }
 
 .bold {
