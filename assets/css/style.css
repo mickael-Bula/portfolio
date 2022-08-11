@@ -660,6 +660,11 @@
     margin-left: -700px;
   }
 }
+/* RESPONSIVE
+------------- */
+@media only screen and (min-width: 360px) {
+  /* il faut que le bandeau de la stack défile totalement sur écran small */
+}
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
 /* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
 html {
@@ -957,6 +962,16 @@ h1 {
 }
 .projects__container--description {
   max-width: 300px;
+}
+.projects__stack {
+  height: 50px;
+  width: auto;
+  margin: 0.5em;
+}
+.projects__stack--larger {
+  width: 50px;
+  height: auto;
+  margin: 0.5em;
 }
 
 .reveal {

@@ -319,6 +319,18 @@ h1 {
             max-width: 300px;
         }
     }
+
+    &__stack {
+        height: 50px;
+        width: auto;
+        margin: .5em;
+        
+        &--larger {
+            width: 50px;
+            height: auto;
+            margin: .5em
+        }
+    }
 }
 
 .reveal {
