@@ -1,35 +1,54 @@
-console.log("app.init()");
-const nav = document.querySelector(".nav");
-const toggle = document.querySelector(".hamburger");
-const navItems = nav.querySelectorAll(".nav__link");
+import slide from "./slide.js";
+import reveal from "./reveal.js";
 
-toggle.addEventListener("click", toggleNav);
+const app = {
+  init: function () {
+    console.log("app.init()");
+    reveal.init();
+    slide.init();
+    app.run();
+  },
 
-function toggleNav() {
-  // on affiche la navbar
-  nav.classList.toggle("active");
+  // suppression de tous les éléments de la classe .slide
+  removeElement: function () {
+    Array.from(document.getElementsByClassName("slide")).forEach((el) =>
+      el.remove()
+    );
+  },
 
-  // on transforme le menu hamburger en 'X'
-  toggle.classList.toggle("active");
+  // création d'un composant div
+  createElement: function (tag, parent, attributes, i) {
+    const element = document.createElement(tag);
+    for (const attribute in attributes) {
+      // on ajoute à l'élément toutes les propriétés de l'objet attributes passé en paramètre
+      element[attribute] = attributes[attribute];
+      element.textContent = "elément " + i;
+    }
+    parent.appendChild(element);
+    return element;
+  },
 
-  // on affiche les liens de la navbar
-  navItems.forEach((item) => item.classList.toggle("active"));
-}
+  run: function () {
+    window.setInterval(() => {
+      app.removeElement();
+      app.showDIvs();
+    }, 5000);
+  },
 
-function reveal() {
-  // on récupère l'ensemble des éléments ayant la classe .reveal
-  const reveals = document.querySelectorAll(".reveal");
+  showDIvs: function () {
+    // le parent est soit div.root, soit son dernier enfant
+    const parent =
+      document.getElementById("root").lastElementChild !== null
+        ? document.getElementById("root").lastElementChild
+        : document.getElementById("root");
 
-  // on récupère la taille de l'écran et on fixe une hauteur pour l'apparition des  éléments
-  const windowHeight = window.innerHeight;
-  const elementVisible = 50;
+    for (let i = 1; i < 6; i++) {
+      // les boîtes apparaissent successivement, semblant tomber les unes après les autres
+      window.setTimeout(() => {
+        app.createElement("div", parent, { className: "slide" }, i);
+      }, 300 * i);
+    }
+  },
+};
 
-  // on boucle sur les éléments pour vérifier si la hauteur a été atteinte pour ajouter la classe .show ou la supprimer
-  for (const reveal of reveals) {
-    reveal.getBoundingClientRect().top < windowHeight - elementVisible
-      ? reveal.classList.add("show")
-      : reveal.classList.remove("show");
-  }
-}
-
-window.addEventListener("scroll", reveal);
+document.addEventListener("DOMContentLoaded", app.init);
