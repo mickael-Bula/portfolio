@@ -1180,7 +1180,7 @@ h1 {
 }
 @media screen and (min-width: 992px) {
   .nav__link {
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 1vh 2vw;
   }
 
@@ -1230,6 +1230,12 @@ h1 {
 @media screen and (min-width: 1050px) {
   .container__labs {
     height: 8em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav__link {
+    font-size: 2em;
+    padding: 1vh 2vw;
   }
 }
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */

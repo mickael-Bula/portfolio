@@ -573,7 +573,7 @@ h1 {
     
     .nav {        
         &__link {
-            font-size: 2em;
+            font-size: 1.5em;
             padding: 1vh 2vw;
         }
     }
@@ -631,6 +631,15 @@ h1 {
     
     .container__labs {
         height: 8em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .nav {        
+        &__link {
+            font-size: 2em;
+            padding: 1vh 2vw;
+        }
     }
 }
 
