@@ -90,4 +90,4 @@ const slide = {
   },
 };
 
-document.addEventListener("DOMContentLoaded", slide.init);
+export default slide;

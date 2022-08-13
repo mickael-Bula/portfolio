@@ -665,6 +665,115 @@
 @media only screen and (min-width: 360px) {
   /* il faut que le bandeau de la stack défile totalement sur écran small */
 }
+.placeholders {
+  display: flex;
+  /* classe utilisée par JS pour afficher un élément */
+  /* classe utilisée par JS pour cacher un élément */
+}
+.placeholders .p-4 {
+  padding: 1.5em;
+}
+.placeholders .box,
+.placeholders .box-placeholder {
+  background-color: #fff;
+  margin: 30px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  vertical-align: top;
+  width: 300px;
+  min-height: 300px;
+}
+.placeholders .box hr,
+.placeholders .box-placeholder hr {
+  margin: 0;
+  border-color: #f3f3f3;
+}
+.placeholders .box .category {
+  display: block;
+  margin-bottom: 10px;
+}
+.placeholders .box .image__project {
+  max-height: 300px;
+  overflow: hidden;
+}
+.placeholders .box img {
+  max-width: 100%;
+}
+.placeholders .box img.projects__stack {
+  height: 50px;
+  width: auto;
+  margin: 5px;
+}
+.placeholders .box img.projects__stack--larger {
+  width: 50px;
+  height: auto;
+  margin: 5px;
+}
+.placeholders .box-placeholder {
+  /* ajout d'une marge basse pour terminer un paragraphe */
+  /* hauteur augmentée pour signifier un titre */
+}
+.placeholders .box-placeholder .text {
+  display: inline-block;
+  background-color: #444;
+  height: 12px;
+  border-radius: 12px;
+  margin: 5px 0;
+  min-width: 100px;
+  opacity: 0.1;
+  animation: fading 1.5s infinite;
+}
+.placeholders .box-placeholder .text.link {
+  background-color: rgb(14, 132, 235);
+  opacity: 0.4;
+}
+.placeholders .box-placeholder .text.line {
+  width: 100%;
+}
+.placeholders .box-placeholder .text.category {
+  width: 100px;
+  margin-bottom: 10px;
+}
+.placeholders .box-placeholder .circle {
+  display: inline-block;
+  background-color: #444;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px;
+  opacity: 0.1;
+  animation: fading 1.5s infinite;
+}
+.placeholders .box-placeholder .text.breakLine {
+  margin-bottom: 1rem;
+}
+.placeholders .box-placeholder .title.text {
+  height: 20px;
+  margin: 3px 0;
+  opacity: 0.2;
+}
+.placeholders .box-placeholder .image {
+  background-color: #f9f9f9;
+}
+.placeholders .hide {
+  display: none;
+}
+.placeholders .show {
+  display: block;
+}
+
+/* effet de scintillement des placeholders */
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
 /* pour compiler sass en ligne de commande : sass <source> <destination> */
 /* I:\fichiers mika\html_CSS\ma librairie de composants dev web */
 html {

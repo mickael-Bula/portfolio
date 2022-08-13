@@ -12,8 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/app.js" defer></script>
-    <script src="assets/js/labs.js"></script>
-    <script src="assets/js/slide.js"></script>
+    <script type="module" src="assets/js/labs.js"></script>
     <title>mon portfolio</title>
 </head>
 <body>
@@ -159,10 +158,12 @@
             <p class="labs__text">Bien que développeur spécialisé en back, je n'ignore pas l'aspect visuel. Bien au contraire, j'aime intégrer de nouveaux éléments de design et rechercher un équilibre dans la composition pour la rendre agréable.<br />
             Vous trouverez dans cette section quelques exemples de mon travail.</p>
             <h3 class="labs__subtitle">apparition successive d'éléments</h3>
+
+            <!-- divs successifs -->
             <div class="container__labs">
-                <!-- divs successifs -->
                 <div id="root"></div>
             </div>
+
             <!-- spinners -->
             <h3 class="labs__subtitle">spinners</h3>
             <p class="labs__text">Une des situations classiques à laquelle nous sommes tous confrontés en parcourant des sites Web est le fait de devoir attendre que du contenu soit chargé. Pour gérer ce type de situation, une des solutions les plus simples consiste à utiliser un chargeur - aussi appelé un spinner - pour indiquer aux utilisateurs que quelque chose se charge en arrière-plan. Voici quelques exemples de spinners développés en pur CSS et qui, pour cette raison, se chargent rapidement et sont aisément personnalisables.</p>
@@ -263,6 +264,56 @@
                     <span class="dot"></span> 
                 </div>
             </div>
+
+            <!-- placeholders -->
+            <h3 class="labs__subtitle">placeholders</h3>
+            <p>Text introductif pour expliquer l'utilité des placeholders (readme).</p>
+            <div class="placeholders">
+                <div class="box-placeholder show">
+                    <div class="p-4">
+                    <h4 class="category title text link"></h4>
+                    <h4 class="title text line"></h4>
+                    <h4 class="title text"></h4>
+                    </div>
+                    <hr>
+                    <div class="image">
+                    <div class="embed-responsive embed-responsive-1by1"></div>
+                    </div>
+                    <hr>
+                    <div class="p-4">
+                    <div class="text line"></div>
+                    <div class="text line"></div>
+                    <div class="text line"></div>
+                    <div class="text breakLine"></div>
+                    <div class="text line"></div>
+                    <div class="text line"></div>
+                    <div class="text line"></div>
+                    <div class="text breakLine"></div>
+                    <div><span class="circle"></span><span class="circle"></span><span class="circle"></span></div>
+                    </div>
+                </div>
+  
+                <div class="box hide">
+                    <div class="p-4">
+                        <a class="category" href="#">culture city app</a>
+                        <h4>Projet de fin de formation</h4>
+                    </div>
+                    <hr>
+                    <div class="image image__project">
+                        <img src="assets/images/screenshot-culturecityapp.png">
+                    </div>
+                    <hr>
+                    <div class="p-4">
+                    <p>Cette application permet à des annonceurs culturels locaux de communiquer sur leur programmation.</p>
+                    <p>Elle a été réalisée en 1 mois par une équipe de 4 personnes organisée en méthode Agile.</p>
+                    <p>
+                        <img class="projects__stack" src="assets/images/html-icon.png" alt="icone HTML">
+                        <img class="projects__stack" src="assets/images/css-icon.jpg" alt="icone CSS">
+                        <img class="projects__stack" src="assets/images/javascript-icon.svg" alt="icone Javascript">
+                    </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -279,10 +330,3 @@
     </main>
 </body>
 </html>
-
-<!-- TODO : ajouter le favicon -->
-<!-- TODO : créer mon logo MB -->
-<!-- TODO : corriger le lien A propos qui manque d'espace et ruine la mise en page -->
-<!-- TODO : ajouter un texte pour chacune des animaations du labo -->
-<!-- TODO : ajouter au labs le loading placeholder ainsi que le spinner -->
-<!-- TODO : ajouter ma stack technique sous ma présentation -->

@@ -1,7 +1,12 @@
-const app = {
+import slide from './slide.js';
+import placeholder from './placeholder.js';
+
+const labs = {
   init: function () {
-    console.log("app.init() landing");
-    app.run();
+    console.log("labs.init()");
+    slide.init();
+    placeholder.init();
+    labs.run();
   },
 
   // suppression de tous les éléments de la classe .slide
@@ -25,8 +30,8 @@ const app = {
 
   run: function () {
     window.setInterval(() => {
-      app.removeElement();
-      app.showDIvs();
+      labs.removeElement();
+      labs.showDIvs();
     }, 5000);
   },
 
@@ -38,12 +43,12 @@ const app = {
         : document.getElementById("root");
 
     for (let i = 1; i < 6; i++) {
-      // les boîtes apparaissent successivement, semblant tomber les unes après les autres
+      // les boîtes labsaraissent successivement, semblant tomber les unes après les autres
       window.setTimeout(() => {
-        app.createElement("div", parent, { className: "slide" }, i);
+        labs.createElement("div", parent, { className: "slide" }, i);
       }, 300 * i);
     }
   },
 };
 
-document.addEventListener("DOMContentLoaded", app.init);
+document.addEventListener("DOMContentLoaded", labs.init);
