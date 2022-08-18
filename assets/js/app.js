@@ -1,11 +1,13 @@
 import slide from "./slide.js";
 import reveal from "./reveal.js";
+import placeholder from "./placeholder.js";
 
 const app = {
   init: function () {
     console.log("app.init()");
     reveal.init();
     slide.init();
+    placeholder.init();
     app.run();
   },
 

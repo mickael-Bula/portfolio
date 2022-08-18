@@ -1,8 +1,18 @@
 .placeholders {
     display: flex;
+    width: 100%;
+    min-height: 500px;
 
-    .p-4 {
-        padding: 1.5em;
+    .placeholder {
+        &__padding {
+        padding: 1.5rem;
+        }
+
+        &__heading--4 {
+            font-size: 1.5rem;
+            text-decoration: none;
+            // text-decoration ne disparait pas : à corriger
+        }
     }
 
     .box,
@@ -14,15 +24,10 @@
         vertical-align: top;
         width: 300px;
         min-height: 300px;
-    
-        hr {
-            margin: 0;
-            border-color: #f3f3f3;
-        }
     }
     
     .box {
-        .category {
+        .placeholder__category {
             display: block;
             margin-bottom: 10px;
         }
@@ -53,10 +58,10 @@
     }
     
     .box-placeholder {
-        // font-size: 0;
-        // line-height: 0;
+        font-size: 0;
+        line-height: 0;
         
-        .text {
+        .placeholder__text {
             display: inline-block;
             background-color: #444;
             height: 12px;
@@ -75,7 +80,7 @@
                 width: 100%;
             }
         
-            &.category {
+            &.placeholder__category {
                 width: 100px;
                 margin-bottom: 10px;
             }
@@ -93,12 +98,12 @@
         }
     
         /* ajout d'une marge basse pour terminer un paragraphe */
-        .text.breakLine {
+        .placeholder__text.breakLine {
             margin-bottom: 1rem;
         }
         
         /* hauteur augmentée pour signifier un titre */
-        .title.text {
+        .placeholder__title.placeholder__text {
             height: 20px;
             margin: 3px 0;
             opacity: .2;
@@ -106,6 +111,9 @@
         
         .image {
             background-color: #f9f9f9;
+            min-height: 300px;
+            border-top: 1px solid #f3f3f3;
+            border-bottom: 1px solid #f3f3f3;
         }
     }
     

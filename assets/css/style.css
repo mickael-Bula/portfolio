@@ -667,11 +667,17 @@
 }
 .placeholders {
   display: flex;
+  width: 100%;
+  min-height: 500px;
   /* classe utilisée par JS pour afficher un élément */
   /* classe utilisée par JS pour cacher un élément */
 }
-.placeholders .p-4 {
-  padding: 1.5em;
+.placeholders .placeholder__padding {
+  padding: 1.5rem;
+}
+.placeholders .placeholder__heading--4 {
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 .placeholders .box,
 .placeholders .box-placeholder {
@@ -683,12 +689,7 @@
   width: 300px;
   min-height: 300px;
 }
-.placeholders .box hr,
-.placeholders .box-placeholder hr {
-  margin: 0;
-  border-color: #f3f3f3;
-}
-.placeholders .box .category {
+.placeholders .box .placeholder__category {
   display: block;
   margin-bottom: 10px;
 }
@@ -710,10 +711,12 @@
   margin: 5px;
 }
 .placeholders .box-placeholder {
+  font-size: 0;
+  line-height: 0;
   /* ajout d'une marge basse pour terminer un paragraphe */
   /* hauteur augmentée pour signifier un titre */
 }
-.placeholders .box-placeholder .text {
+.placeholders .box-placeholder .placeholder__text {
   display: inline-block;
   background-color: #444;
   height: 12px;
@@ -723,14 +726,14 @@
   opacity: 0.1;
   animation: fading 1.5s infinite;
 }
-.placeholders .box-placeholder .text.link {
+.placeholders .box-placeholder .placeholder__text.link {
   background-color: rgb(14, 132, 235);
   opacity: 0.4;
 }
-.placeholders .box-placeholder .text.line {
+.placeholders .box-placeholder .placeholder__text.line {
   width: 100%;
 }
-.placeholders .box-placeholder .text.category {
+.placeholders .box-placeholder .placeholder__text.placeholder__category {
   width: 100px;
   margin-bottom: 10px;
 }
@@ -744,16 +747,19 @@
   opacity: 0.1;
   animation: fading 1.5s infinite;
 }
-.placeholders .box-placeholder .text.breakLine {
+.placeholders .box-placeholder .placeholder__text.breakLine {
   margin-bottom: 1rem;
 }
-.placeholders .box-placeholder .title.text {
+.placeholders .box-placeholder .placeholder__title.placeholder__text {
   height: 20px;
   margin: 3px 0;
   opacity: 0.2;
 }
 .placeholders .box-placeholder .image {
   background-color: #f9f9f9;
+  min-height: 300px;
+  border-top: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
 }
 .placeholders .hide {
   display: none;
