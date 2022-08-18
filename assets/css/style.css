@@ -677,6 +677,7 @@
 }
 .placeholders .placeholder__heading--4 {
   font-size: 1.5rem;
+  margin: 0;
   text-decoration: none;
 }
 .placeholders .box,
@@ -737,7 +738,7 @@
   width: 100px;
   margin-bottom: 10px;
 }
-.placeholders .box-placeholder .circle {
+.placeholders .box-placeholder .placeholder__circle {
   display: inline-block;
   background-color: #444;
   width: 50px;
