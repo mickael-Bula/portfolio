@@ -12,7 +12,10 @@
             font-size: 1.5rem;
             margin: 0;
             text-decoration: none;
-            // text-decoration ne disparait pas : à corriger
+
+            &:visited {
+                color:rgb(14, 132, 235);
+            }
         }
     }
 

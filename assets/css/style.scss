@@ -28,7 +28,7 @@ h1 {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -36,15 +36,16 @@ h1 {
 }
 
 .section {
-    padding: 5em;
+    padding: 2rem;
 }
 
 .title {
     font-weight: 700;
-    font-size: 4.5em;
+    font-size: 2.5rem;
 }
 
 .gradient-title {
+    background-color: #01e396;
     background-image: linear-gradient(45deg, #05619b, #01e396);
     background-size: 100%;
     background-clip: text;
@@ -52,7 +53,7 @@ h1 {
 }
 
 .regular {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     font-weight: 400;
     text-align: justify;
 }
@@ -61,9 +62,9 @@ h1 {
     color: $textBlue;
     font-weight: 400;
     border-radius: 100%;
-    padding: .2em;
+    padding: .2rem;
     transition: .5s background-color;
-    margin-left: .5em;
+    margin-left: .5rem;
 }
 
 .icon:hover {
@@ -127,7 +128,7 @@ h1 {
 
     &__logo {
         position: absolute;
-        font-size: 3em;
+        font-size: 3rem;
         font-weight: 400;
         color: white;
         opacity: 0;
@@ -160,7 +161,7 @@ h1 {
     top: 0;
     right: 0;
     width: 100%;
-    height: 12em;
+    height: 12rem;
     z-index: 1;
     background: $navBarBgColor;
     clip-path: circle(29px at calc(100% - 5vw - calc(#{$hamburgerSize} / 2)) calc(5vh + #{$hamburgerSize} / 2));
@@ -222,11 +223,11 @@ h1 {
             transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
         
         &:nth-child(1) {
-            transform: translate(-50%, calc(-50% - .5em));
+            transform: translate(-50%, calc(-50% - .5rem));
             }
         
         &:last-child {
-            transform: translate(-50%, calc(-50% + .5em));
+            transform: translate(-50%, calc(-50% + .5rem));
             }
         }
         
@@ -275,7 +276,7 @@ h1 {
         &--thumbnail {
             width: 300px;
             height: 300px;
-            margin-top: 3em;
+            margin-top: 3rem;
             overflow: hidden;
             transition: all 0.5s ease;
             box-shadow: 1px 1px 5px #696969;
@@ -289,8 +290,8 @@ h1 {
         &--icons {
             display: block;
             text-align: right;
-            padding: .5em 0;
-            font-size: 1em;
+            padding: .5rem 0;
+            font-size: 1rem;
             color: $textBlue;
 
             & a, a:visited {
@@ -309,10 +310,10 @@ h1 {
         flex-direction: column;
         
         &--title {
-            font-size: 3em;
+            font-size: 3rem;
             font-weight: 400;
-            padding: 0 0 .5em 0;
-            margin: 1em 0 0 0;
+            padding: 0 0 .5rem 0;
+            margin: 1rem 0 0 0;
         }
         
         &--description {
@@ -323,12 +324,12 @@ h1 {
     &__stack {
         height: 50px;
         width: auto;
-        margin: .5em;
+        margin: .5rem;
         
         &--larger {
             width: 50px;
             height: auto;
-            margin: .5em
+            margin: .5rem
         }
     }
 }
@@ -350,21 +351,21 @@ h1 {
     width: 100%;
     background-color: $navBarBgColor;
     text-align: center;
-    padding: 4em 0 3em 0;
+    padding: 4rem 0 3rem 0;
 
     &__message {
         color: #c7c5ca;
-        font-size: 2.5em;
-        margin-bottom: 2em;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
     }
 
-    &__email-btn {
+    &__remail-btn {
         color: #F1F2F3;
         background-color: #f46674;
-        padding: 1em 1.5em;
+        padding: 1rem 1.5rem;
         display: inline-block;
         border-radius: 6px;
-        font-size: 1.5em;
+        font-size: 1.5rem;
 
         & span {
             cursor: pointer;
@@ -407,7 +408,7 @@ h1 {
 
         & li i {
             color: #c3c3cb;
-            font-size: 2em;
+            font-size: 2rem;
             transition: all 0.3s;
         }
 
@@ -424,12 +425,12 @@ h1 {
 
     &__text {
         width: 90%;
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     &__subtitle {
         text-transform: uppercase;
-        font-size: 2em;
+        font-size: 2rem;
         font-weight: 400;
         margin-bottom: 0;
     }
@@ -437,9 +438,9 @@ h1 {
 
 .container__labs {
     width: 90%;
-    height: 40em;
-    margin: 2em auto;
-    padding: 2em 0;
+    height: 40rem;
+    margin: 2rem auto;
+    padding: 2rem 0;
     border: 4px solid rgb(126, 166, 219);
     border-radius: 15px;
     overflow: hidden;
@@ -459,10 +460,10 @@ h1 {
     justify-content: center;
     align-items: center;
     color: white;
-    width: 6em;
-    height: 6em;
+    width: 6rem;
+    height: 6rem;
     background-color: rgb(54, 112, 236);
-    margin: 1em;
+    margin: 1rem;
     animation: 0.8s slide;
 }
 
@@ -509,14 +510,14 @@ h1 {
 @media screen and (min-width: 516px) {
     
     .container__labs {
-        height: 32em;
+        height: 32rem;
     }
 }
 
 @media screen and (min-width: 600px) {
 
     .projects__title {
-        font-size: 4em;
+        font-size: 4rem;
     }
 
     .projects__card--thumbnail {
@@ -528,26 +529,38 @@ h1 {
         max-width: 400px;
 
         & p {
-            font-size: 1.2em;
+            font-size: 1.2rem;
         }
     }
 
     .container__labs {
         width: 90%;
-        height: 24em;
+        height: 24rem;
     }
 }
 
 /* à partir de 700px, le menu de navigation vertical devient horizontal */
 @media screen and (min-width:700px) {
 
+    .container {
+        width: 80%;
+    }
+    
+    .section {
+        padding: 5rem;
+    }
+
+    .title {
+        font-size: 4.5rem;
+    }
+
     .banner {   
         &__logo {
-            font-size: 4em;
+            font-size: 4rem;
         }
         
         &__incipit {
-            font-size: 4em;
+            font-size: 4rem;
             bottom: 30%;
             right: 20%;
         }
@@ -557,7 +570,7 @@ h1 {
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        height: 8em;
+        height: 8rem;
         
         &.active {
             clip-path: circle(75% at 50% 10%);
@@ -565,7 +578,7 @@ h1 {
     }
 
     .container__labs {
-        height: 16em;
+        height: 16rem;
     }
 }
 
@@ -573,17 +586,17 @@ h1 {
     
     .nav {        
         &__link {
-            font-size: 2em;
+            font-size: 2rem;
             padding: 1vh 2vw;
         }
     }
 
     .banner {     
         &__logo {
-            font-size: 5em;
+            font-size: 5rem;
         }      
         &__incipit {
-            font-size: 5em;
+            font-size: 5rem;
             bottom: 30%;
             right: 20%;
         }
@@ -601,7 +614,7 @@ h1 {
         display: grid;
         width: 100%;
         grid-template-columns: 1fr 1fr;
-        gap: 3em;
+        gap: 3rem;
         align-items: flex-start;
     }
     
@@ -630,7 +643,7 @@ h1 {
 @media screen and (min-width: 1050px) {
     
     .container__labs {
-        height: 8em;
+        height: 8rem;
     }
 }
 
@@ -651,7 +664,7 @@ h1 {
         }
         
         &__link {
-            font-size: 2em;
+            font-size: 2rem;
             padding: 1vh 3vw;
             transform: translateY(50%);
             
@@ -670,17 +683,17 @@ h1 {
 @media screen and (min-width: 1902px) {
 
     .nav, .hamburger {
-        left: calc((50% + 960px) - 7.6em);
-        top: 6em;
+        left: calc((50% + 960px) - 7.6rem);
+        top: 6rem;
         transform: translateX(-50%);
     }
 
     .nav {
-        height: calc(100vh + 10em);
-        clip-path: circle(29px at calc(100% - 6em - calc(#{$hamburgerSize} / 2)) calc(#{$hamburgerSize} / 2));
+        height: calc(100vh + 10rem);
+        clip-path: circle(29px at calc(100% - 6rem - calc(#{$hamburgerSize} / 2)) calc(#{$hamburgerSize} / 2));
         /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
         &.active {
-            top: -6em;
+            top: -6rem;
         }
     }
     
@@ -691,7 +704,7 @@ h1 {
 
         &__patty {
             position: absolute;
-            top: 1.8em;
+            top: 1.8rem;
             left: 50%;
             transform: translate(-50%, -50%);
             height: 2px;
