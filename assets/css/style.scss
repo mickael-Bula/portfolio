@@ -647,6 +647,15 @@ h1 {
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .nav {        
+        &__link {
+            font-size: 2em;
+            padding: 1vh 2vw;
+        }
+    }
+}
+
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
 @media screen and (min-width: 1400px) {
     

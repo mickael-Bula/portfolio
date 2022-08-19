@@ -3,11 +3,11 @@ const reveal = {
         console.log("reveal.init()");
 
         window.addEventListener("scroll", reveal.reveal);
-
-        const toggle = document.querySelector(".hamburger");
         
-        toggle.addEventListener("click", reveal.toggleNav);
+        reveal.toggle.addEventListener("click", reveal.toggleNav);
     },
+
+    toggle: document.querySelector(".hamburger"),
     
     toggleNav: function() {
         const nav = document.querySelector(".nav");
@@ -16,7 +16,7 @@ const reveal = {
         nav.classList.toggle("active");
 
         // on transforme le menu hamburger en 'X'
-        toggle.classList.toggle("active");
+        reveal.toggle.classList.toggle("active");
 
         // on affiche les liens de la navbar
         navItems.forEach((item) => item.classList.toggle("active"));
