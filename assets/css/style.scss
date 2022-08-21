@@ -61,15 +61,6 @@ h1 {
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
     }
-
-    // background-color: #f3ec78;
-    // background-image: linear-gradient(45deg, #05619b, #01e396);
-    // background-size: 100%;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // -moz-background-clip: text;
-    // -moz-text-fill-color: transparent;
-    // -webkit-text-fill-color: transparent;
 }
 
 .regular {
@@ -319,7 +310,7 @@ h1 {
             }
         }
         &--leaning {
-            width: 400px;
+            width: 300px;
             border-radius: 5px;
         }
     }
@@ -547,6 +538,10 @@ h1 {
     .projects__card--thumbnail {
         width: 400px;
         height: 400px;
+    }
+
+    .projects__card--leaning {
+        width: 400px;
     }
     
     .projects__container--description {

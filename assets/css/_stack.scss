@@ -35,14 +35,14 @@
         display: inline-block;
         width: 100%;
         overflow: hidden;
-        margin: 50px auto;
+        margin: 3rem auto;
         background: transparent;
     }
 
     &__banner {
-        /* le conteneur qui défile et dont la largeur corrrspond à la somme de ses éléments */
-        height: 170px;
-        width: 2200px;
+        /* le conteneur qui défile et dont la largeur correspond à la somme de ses éléments */
+        height: 10.5rem;
+        width: 137rem;
         
     }
 
@@ -56,16 +56,16 @@
     }
 
     &__item {
-        height: 100px;
+        height: 6rem;
         width: auto;
         margin: 1rem;
         
         &--larger {
             /* pour icône php plus large que haut */
-            width: 150px;
+            width: 9rem;
             height: auto;
             position: relative;
-            top: 25px;
+            top: 1.5rem;
             margin: 1rem;
         }
     }
@@ -78,16 +78,92 @@
 
 @keyframes bannermove {
     0% {
-       margin-left: 50px;
+       margin-left: 3rem;
     }
     100% {
-       margin-left: -700px;
+       margin-left: -94rem;
     }
 }
 
 /* RESPONSIVE
 ------------- */
+/* gestion du bandeau de défilement : modification de la marge gauche en focntion des tailles d'écran */
+@media only screen and (min-width: 600px) {
 
-@media only screen and (min-width: 360px) {
-    /* il faut que le bandeau de la stack défile totalement sur écran small */
+    .first {
+        animation: bannermove 16s linear infinite alternate;
+    }
+
+    @keyframes bannermove {
+        0% {
+           margin-left: 3rem;
+        }
+        100% {
+           margin-left: -85rem;
+        }
+    }   
+}
+
+@media only screen and (min-width: 900px) {
+
+    .first {
+        animation: bannermove 13s linear infinite alternate;
+    }
+
+    @keyframes bannermove {
+        0% {
+           margin-left: 3rem;
+        }
+        100% {
+           margin-left: -70rem;
+        }
+    }   
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .first {
+        animation: bannermove 10s linear infinite alternate;
+    }
+
+    @keyframes bannermove {
+        0% {
+           margin-left: 3rem;
+        }
+        100% {
+           margin-left: -45rem;
+        }
+    }   
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .first {
+        animation: bannermove 10s linear infinite alternate;
+    }
+
+    @keyframes bannermove {
+        0% {
+           margin-left: 3rem;
+        }
+        100% {
+           margin-left: -45rem;
+        }
+    }   
+}
+
+@media only screen and (min-width: 1900px) {
+
+    .first {
+        animation: bannermove 5s linear infinite alternate;
+    }
+
+    @keyframes bannermove {
+        0% {
+           margin-left: 5rem;
+        }
+        100% {
+           margin-left: -15rem;
+        }
+    }   
 }
