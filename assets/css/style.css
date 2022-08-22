@@ -1024,7 +1024,7 @@ h1 {
   top: 0;
   right: 0;
   width: 100%;
-  height: 12rem;
+  height: 16rem;
   z-index: 1;
   background: #333F4F;
   clip-path: circle(29px at calc(100% - 5vw - (60px / 2)) calc(5vh + 60px / 2));
@@ -1035,7 +1035,7 @@ h1 {
 }
 .nav__link {
   display: block;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: -1px;
@@ -1199,8 +1199,8 @@ h1 {
 }
 .contact__message {
   color: #c7c5ca;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin: 1rem 1rem 2rem 1rem;
 }
 .contact__email-btn {
   color: #F1F2F3;
@@ -1334,6 +1334,10 @@ h1 {
   html {
     font-size: 14px;
   }
+
+  .nav {
+    height: 14rem;
+  }
 }
 @media screen and (min-width: 600px) {
   .projects__title {
@@ -1402,9 +1406,14 @@ h1 {
     height: 16rem;
   }
 }
+@media screen and (min-width: 800px) {
+  .nav__link {
+    font-size: 1.3rem;
+  }
+}
 @media screen and (min-width: 992px) {
   .nav__link {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1vh 2vw;
   }
 
@@ -1452,14 +1461,12 @@ h1 {
   }
 }
 @media screen and (min-width: 1050px) {
-  .container__labs {
-    height: 8rem;
-  }
-}
-@media screen and (min-width: 1200px) {
   .nav__link {
     font-size: 2rem;
-    padding: 1vh 2vw;
+  }
+
+  .container__labs {
+    height: 8rem;
   }
 }
 /* sur les tailles d'écran supérieures à 1400px, la barre de navigation devient latérale */
