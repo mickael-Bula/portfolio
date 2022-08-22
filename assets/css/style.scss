@@ -10,6 +10,8 @@ html {
 }
 
 body {
+    /* je fixe la taille minimale de l'écran à 360px */
+    min-width: 360px;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: $bgLight;
@@ -50,13 +52,13 @@ h1 {
     /* je prévoit une couleur par défaut pour le titre et des conditions pour appliquer un text-gradient */
     color: black;
     @supports (-webkit-background-clip: text) and (-webkit-text-fill-color: transparent) {
-        background-image: linear-gradient(45deg, #05619b, #01e396);
+        background-image: linear-gradient(30deg, #05619b, #01e396);
         background-size: 100%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
     }
     @supports (-moz-background-clip: text) and (-moz-text-fill-color: transparent) {
-        background-image: linear-gradient(45deg, #05619b, #01e396);
+        background-image: linear-gradient(30deg, #05619b, #01e396);
         background-size: 100%;
         -moz-background-clip: text;
         -moz-text-fill-color: transparent;
@@ -449,7 +451,7 @@ h1 {
 
 .container__labs {
     width: 90%;
-    height: 40rem;
+    height: 16rem;
     margin: 2rem auto;
     padding: 2rem 0;
     border: 4px solid rgb(126, 166, 219);
@@ -523,10 +525,6 @@ h1 {
     html {
         font-size: 14px;
     }
-    
-    .container__labs {
-        height: 32rem;
-    }
 }
 
 @media screen and (min-width: 600px) {
@@ -551,10 +549,12 @@ h1 {
             font-size: 1.2rem;
         }
     }
+}
+
+@media screen and (min-width:678px) {
 
     .container__labs {
-        width: 90%;
-        height: 24rem;
+        height: 8rem;
     }
 }
 
