@@ -894,7 +894,7 @@ h1 {
 }
 
 .title {
-  font-weight: 700;
+  font-weight: 900;
   font-size: 2.5rem;
 }
 
@@ -1438,6 +1438,12 @@ h1 {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: flex-start;
+  }
+  .projects__container--title {
+    border-top: none;
+  }
+  .projects__container--description {
+    margin-top: 3rem;
   }
 
   .projects__container--city-app, .projects__container--weatherApp {
