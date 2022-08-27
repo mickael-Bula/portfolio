@@ -267,17 +267,17 @@
             <h3 class="labs__subtitle">placeholders</h3>
             <p>Voici quelques exemples de placeholer de chargement.<br>
                 Un placeholder de chargement est un type de traitement de l'interface utilisateur que l'on retrouve sur la plupart des sites Web et des applications mobiles modernes et qui indique à l'utilisateur que tout ou partie d'une page est en train de charger du contenu. Lorsqu'ils sont utilisés correctement, ils aident l'utilisateur à se représenter un contenu spécifique avant même son chargement complet. En ce sens ils sont beaucoup plus agréables visuellement qu'un spinner de chargement.</p>
-            <div class="placeholders">
-                <div class="box-placeholder show">
-                    <div class="placeholder__padding">
-                    <h4 class="placeholder__category placeholder__title placeholder__text link"></h4>
-                    <h4 class="placeholder__title placeholder__text line"></h4>
-                    <h4 class="placeholder__title placeholder__text"></h4>
-                    </div>
-                    <div class="image">
-                    <div></div>
-                    </div>
-                    <div class="placeholder__padding">
+                <div class="placeholders">
+                    <div class="box-placeholder show">
+                        <div class="placeholder__padding">
+                            <h4 class="placeholder__category placeholder__title placeholder__text link"></h4>
+                            <h4 class="placeholder__title placeholder__text line"></h4>
+                            <h4 class="placeholder__title placeholder__text"></h4>
+                        </div>
+                        <div class="image">
+                            <div></div>
+                        </div>
+                        <div class="placeholder__padding">
                     <div class="placeholder__text line"></div>
                     <div class="placeholder__text line"></div>
                     <div class="placeholder__text line"></div>
@@ -309,9 +309,36 @@
                     </div>
                 </div>
             </div>
+
+            <!-- long text fading -->
+            <h3 class="labs__subtitle">estomper un texte long</h3>
+            <p>Parce qu'il est parfois utile de ne pas afficher la totalité d'une texte tout en laissant au lecteur la possibilité de le parcourir, j'utilise ici un artifice qui estompe graduellement le texte jusqu'à le rendre totalement opaque. Un simple clic permet d'accéder au contenu.</p>
+            <div class="card" id="card">
+                <div class="card__text">
+                    <h3 class="headline-5">Gérer la longueur d'une ligne avec un gradient</h3>
+                    <p class="card__text--description card__text--inline">
+                        Voici une alternative au classique "..." pour tronquer un texte trop long. J'utilise ici un gradient pour estomper la visibilité du texte. Cependant, pour que l'effet fonctionne, la description doit être plus longue que son conteneur, rester sur une même ligne et ne pas apparaître hors de son parent. Pour ce faire, j'emploie les règles <span class="bracket">{</span>&nbsp;<span class="property">white-space</span><span class="punctuation">:</span> <span class="value">nowrap</span>;&nbsp;<span class="bracket">}</span> et <span class="bracket">{</span>&nbsp;<span class="property">overflow</span><span class="punctuation">: </span><span class="value">hidden</span>;&nbsp;<span class="bracket">}</span>.
+                    </p>
+                    <span class="card__link">En voir plus </span><span class="card__icon">↗</span>
+                </div>
+            </div>
+    
+            <div class="card card__block" id="card__block">
+                <div class="card__text">
+                    <h3 class="headline-5">Gérer la longueur d'un bloc avec un gradient</h3>
+                    <p class="card__text--description card__text--block">
+                        Le même effet, cette fois appliqué à un bloc. Il s'agit de gérer la hauteur du texte de manière à ce qu'il respecte la mise en page tout en invitant le lecteur à poursuivre sa lecture. Pour créer cet effet je me contente de déplacer le gradient en lui assignant toute la longueur de l'élément parent. Et pour gérer la hauteur du bloc, j'ajoute la règle <span class="bracket">{</span>&nbsp;<span class="property">height</span><span class="punctuation">:</span> <span class="value">fit-content</span>;&nbsp;<span class="bracket">}</span> lorsque la classe .open est ajoutée à l'élément au clic sur le bouton.<br><br>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt veniam itaque nostrum odit accusantium aliquid eius quo facere et tempora? Facere eum aliquam provident ratione architecto eligendi et consequuntur ex.
+                        Adipisci facere ea perferendis neque reiciendis deserunt ab magnam. Non qui, obcaecati animi est fugit eius modi perferendis sunt quas quaerat possimus voluptates earum quam cupiditate sapiente fugiat facere enim!
+                        Reiciendis suscipit possimus non nihil quam in, id ut quia omnis ducimus porro adipisci iste harum. Eum consequatur, in voluptatum nesciunt totam, impedit quia labore saepe ab voluptas nemo obcaecati.
+                        Modi dolorem quo, eveniet sunt cum molestias consequatur, fugit odit delectus amet perspiciatis dicta error tempora quaerat libero voluptates, voluptatem impedit suscipit provident eos. Maiores reiciendis provident quam voluptates quisquam?
+                    </p>
+                    <button class="card__btn" id="myBtn">Lire plus</button>
+                </div>
+            </div>
         </div>
     </section>
-
+    
     <footer id="contact" class="contact">
         <p class="contact__message">Merci d'avoir fait défiler ce site jusqu'ici. Si ce portfolio vous a plu, vous pouvez laisser un commentaire.</p>
         <a href="mailto:bula.mickael@gmail.com?subject=Prise de contact" class="contact__email-btn"><span><i class="fa fa-envelope-o" aria-hidden="true"></i> Me Contacter</span></a>

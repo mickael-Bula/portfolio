@@ -1,6 +1,7 @@
 import slide from "./slide.js";
 import reveal from "./reveal.js";
 import placeholder from "./placeholder.js";
+import cards from "./cards.js";
 
 const app = {
   init: function () {
@@ -8,6 +9,7 @@ const app = {
     reveal.init();
     slide.init();
     placeholder.init();
+    cards.init();
     app.run();
   },
 
