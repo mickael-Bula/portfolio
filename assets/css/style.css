@@ -54,7 +54,9 @@
   font-size: 2.5em;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /* Position the "next button" to the right */
@@ -173,20 +175,7 @@
   width: 40px;
   height: 40px;
   background-color: #f1f2f3;
-  -webkit-animation: spinner-rotate 1.2s infinite ease-in-out;
   animation: spinner-rotate 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes spinner-rotate {
-  0% {
-    -webkit-transform: perspective(120px);
-  }
-  50% {
-    -webkit-transform: perspective(120px) rotateY(180deg);
-  }
-  100% {
-    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
-  }
 }
 @keyframes spinner-rotate {
   0% {
@@ -215,37 +204,23 @@
   height: 100%;
   width: 6px;
   display: inline-block;
-  -webkit-animation: spinner-stretch 1.2s infinite ease-in-out;
   animation: spinner-stretch 1.2s infinite ease-in-out;
 }
 
 .spinner__audio .rect2 {
-  -webkit-animation-delay: -1.1s;
   animation-delay: -1.1s;
 }
 
 .spinner__audio .rect3 {
-  -webkit-animation-delay: -1s;
   animation-delay: -1s;
 }
 
 .spinner__audio .rect4 {
-  -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
 }
 
 .spinner__audio .rect5 {
-  -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
-}
-
-@-webkit-keyframes spinner-stretch {
-  0%, 40%, 100% {
-    -webkit-transform: scaleY(0.4);
-  }
-  20% {
-    -webkit-transform: scaleY(1);
-  }
 }
 @keyframes spinner-stretch {
   0%, 40%, 100% {
@@ -280,138 +255,95 @@
   height: 15%;
   background-color: #f1f2f3;
   border-radius: 100%;
-  -webkit-animation: circleFadeDelay 1.2s infinite ease-in-out both;
   animation: circleFadeDelay 1.2s infinite ease-in-out both;
 }
 
 .circle2 {
-  -webkit-transform: rotate(30deg);
-  -ms-transform: rotate(30deg);
   transform: rotate(30deg);
 }
 
 .circle3 {
-  -webkit-transform: rotate(60deg);
-  -ms-transform: rotate(60deg);
   transform: rotate(60deg);
 }
 
 .circle4 {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .circle5 {
-  -webkit-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
   transform: rotate(120deg);
 }
 
 .circle6 {
-  -webkit-transform: rotate(150deg);
-  -ms-transform: rotate(150deg);
   transform: rotate(150deg);
 }
 
 .circle7 {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .circle8 {
-  -webkit-transform: rotate(210deg);
-  -ms-transform: rotate(210deg);
   transform: rotate(210deg);
 }
 
 .circle9 {
-  -webkit-transform: rotate(240deg);
-  -ms-transform: rotate(240deg);
   transform: rotate(240deg);
 }
 
 .circle10 {
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .circle11 {
-  -webkit-transform: rotate(300deg);
-  -ms-transform: rotate(300deg);
   transform: rotate(300deg);
 }
 
 .circle12 {
-  -webkit-transform: rotate(330deg);
-  -ms-transform: rotate(330deg);
   transform: rotate(330deg);
 }
 
 .circle2:before {
-  -webkit-animation-delay: -1.1s;
   animation-delay: -1.1s;
 }
 
 .circle3:before {
-  -webkit-animation-delay: -1s;
   animation-delay: -1s;
 }
 
 .circle4:before {
-  -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
 }
 
 .circle5:before {
-  -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
 }
 
 .circle6:before {
-  -webkit-animation-delay: -0.7s;
   animation-delay: -0.7s;
 }
 
 .circle7:before {
-  -webkit-animation-delay: -0.6s;
   animation-delay: -0.6s;
 }
 
 .circle8:before {
-  -webkit-animation-delay: -0.5s;
   animation-delay: -0.5s;
 }
 
 .circle9:before {
-  -webkit-animation-delay: -0.4s;
   animation-delay: -0.4s;
 }
 
 .circle10:before {
-  -webkit-animation-delay: -0.3s;
   animation-delay: -0.3s;
 }
 
 .circle11:before {
-  -webkit-animation-delay: -0.2s;
   animation-delay: -0.2s;
 }
 
 .circle12:before {
-  -webkit-animation-delay: -0.1s;
   animation-delay: -0.1s;
-}
-
-@-webkit-keyframes circleFadeDelay {
-  0%, 39%, 100% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
 }
 @keyframes circleFadeDelay {
   0%, 39%, 100% {
@@ -436,40 +368,25 @@
   background-color: #f1f2f3;
   border-radius: 100%;
   display: inline-block;
-  -webkit-animation: growingDelay 1.4s infinite ease-in-out both;
   animation: growingDelay 1.4s infinite ease-in-out both;
 }
 
 .spinner__dots .dot1 {
-  -webkit-animation-delay: 0.16s;
   animation-delay: 0.16s;
 }
 
 .spinner__dots .dot2 {
-  -webkit-animation-delay: 0.32s;
   animation-delay: 0.32s;
 }
 
 .spinner__dots .dot3 {
-  -webkit-animation-delay: 0.32s;
   animation-delay: 0.48s;
-}
-
-@-webkit-keyframes growingDelay {
-  0%, 80%, 100% {
-    -webkit-transform: scale(0);
-  }
-  40% {
-    -webkit-transform: scale(1);
-  }
 }
 @keyframes growingDelay {
   0%, 80%, 100% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   40% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -598,6 +515,7 @@
   width: 100%;
 }
 .stack__title {
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
@@ -666,7 +584,6 @@
   .first {
     animation: bannermove 16s linear infinite alternate;
   }
-
   @keyframes bannermove {
     0% {
       margin-left: 3rem;
@@ -680,7 +597,6 @@
   .first {
     animation: bannermove 13s linear infinite alternate;
   }
-
   @keyframes bannermove {
     0% {
       margin-left: 3rem;
@@ -694,7 +610,6 @@
   .first {
     animation: bannermove 10s linear infinite alternate;
   }
-
   @keyframes bannermove {
     0% {
       margin-left: 3rem;
@@ -708,7 +623,6 @@
   .first {
     animation: bannermove 10s linear infinite alternate;
   }
-
   @keyframes bannermove {
     0% {
       margin-left: 3rem;
@@ -722,7 +636,6 @@
   .first {
     animation: bannermove 5s linear infinite alternate;
   }
-
   @keyframes bannermove {
     0% {
       margin-left: 5rem;
@@ -918,6 +831,7 @@
   bottom: 0;
 }
 .card .card__text .card__btn {
+  width: -moz-fit-content;
   width: fit-content;
   padding: 1em;
   margin: 1em 0;
@@ -956,6 +870,7 @@
   background-image: none;
 }
 .card.open .card__text--block {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .card.open.card__block .card__btn {
@@ -1112,15 +1027,15 @@ h1 {
   background: linear-gradient(to bottom, #e64741 0%, #e6255d 100%, #7db9e8 100%);
   animation: slideInLeft 0.5s;
   /* animation-fill-mode indique la façon dont une animation applique les styles à sa cible avant et après son exécution. */
-  animation-fill-mode: forwards;
-  /* 'forwards' retient les valeurs calculées définies lors de la dernière étape (keyframe) */
+  animation-fill-mode: forwards; /* 'forwards' retient les valeurs calculées définies lors de la dernière étape (keyframe) */
 }
 .banner__right {
   position: absolute;
   background-color: black;
   width: 100%;
   height: 100%;
-  clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+          clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
   animation: slideInRight 0.5s 0.5s;
   animation-fill-mode: forwards;
 }
@@ -1160,11 +1075,13 @@ h1 {
   height: 16rem;
   z-index: 1;
   background: #333F4F;
-  clip-path: circle(29px at calc(100% - 5vw - (60px / 2)) calc(5vh + 60px / 2));
+  -webkit-clip-path: circle(29px at calc(100% - 5vw - (60px / 2)) calc(5vh + 60px / 2));
+          clip-path: circle(29px at calc(100% - 5vw - (60px / 2)) calc(5vh + 60px / 2));
   transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .nav.active {
-  clip-path: circle(75% at 50% 50%);
+  -webkit-clip-path: circle(75% at 50% 50%);
+          clip-path: circle(75% at 50% 50%);
 }
 .nav__link {
   display: block;
@@ -1439,7 +1356,8 @@ h1 {
 }
 @keyframes slideInRight {
   to {
-    clip-path: polygon(0% 75%, 0 100%, 100% 100%, 100% 25%);
+    -webkit-clip-path: polygon(0% 75%, 0 100%, 100% 100%, 100% 25%);
+            clip-path: polygon(0% 75%, 0 100%, 100% 100%, 100% 25%);
   }
 }
 @keyframes fadeInLeft {
@@ -1467,7 +1385,6 @@ h1 {
   html {
     font-size: 14px;
   }
-
   .nav {
     height: 14rem;
   }
@@ -1476,16 +1393,13 @@ h1 {
   .projects__title {
     font-size: 4rem;
   }
-
   .projects__card--thumbnail {
     width: 400px;
     height: 400px;
   }
-
   .projects__card--leaning {
     width: 400px;
   }
-
   .projects__container--description {
     max-width: 400px;
   }
@@ -1503,19 +1417,15 @@ h1 {
   html {
     font-size: 16px;
   }
-
   .container {
     width: 80%;
   }
-
   .section {
     padding: 5rem;
   }
-
   .title {
     font-size: 4.5rem;
   }
-
   .banner__logo {
     font-size: 4rem;
   }
@@ -1524,7 +1434,6 @@ h1 {
     bottom: 30%;
     right: 20%;
   }
-
   .nav {
     flex-flow: row nowrap;
     justify-content: center;
@@ -1532,9 +1441,9 @@ h1 {
     height: 8rem;
   }
   .nav.active {
-    clip-path: circle(75% at 50% 10%);
+    -webkit-clip-path: circle(75% at 50% 10%);
+            clip-path: circle(75% at 50% 10%);
   }
-
   .container__labs {
     height: 16rem;
   }
@@ -1549,7 +1458,6 @@ h1 {
     font-size: 1.5rem;
     padding: 1vh 2vw;
   }
-
   .banner__logo {
     font-size: 5rem;
   }
@@ -1558,7 +1466,6 @@ h1 {
     bottom: 30%;
     right: 20%;
   }
-
   /* j'augmente la taille de référence de la police (em) */
   .contact {
     font-size: 12px;
@@ -1578,32 +1485,32 @@ h1 {
   .projects__container--description {
     margin-top: 3rem;
   }
-
-  .projects__container--city-app, .projects__container--weatherApp {
+  .projects__container--city-app,
+  .projects__container--todolist_vue,
+  .projects__container--two,
+  .projects__container--four {
     align-items: flex-end;
   }
-
   .projects__container--city-app, .projects__container--one {
     order: -2;
   }
-
   .projects__container--two {
     order: -1;
-    align-items: flex-end;
   }
   .projects__container--two .projects__container--description {
     text-align: right;
   }
-
-  .projects__container--todolist {
+  .projects__container--todolist, .projects__container--weatherApp {
     align-items: flex-start;
+  }
+  .projects__container--weatherApp {
+    order: 1;
   }
 }
 @media screen and (min-width: 1050px) {
   .nav__link {
     font-size: 2rem;
   }
-
   .container__labs {
     height: 8rem;
   }
@@ -1616,10 +1523,12 @@ h1 {
     width: 250px;
     height: 100%;
     background: #333F4F;
-    clip-path: circle(29px at calc(250px - 5vw - calc(60px / 2)) calc(5vh + 60px / 2));
+    -webkit-clip-path: circle(29px at calc(250px - 5vw - calc(60px / 2)) calc(5vh + 60px / 2));
+            clip-path: circle(29px at calc(250px - 5vw - calc(60px / 2)) calc(5vh + 60px / 2));
   }
   .nav.active {
-    clip-path: circle(75% at calc(250px / 2) 50vh);
+    -webkit-clip-path: circle(75% at calc(250px / 2) 50vh);
+            clip-path: circle(75% at calc(250px / 2) 50vh);
   }
   .nav__link {
     font-size: 2rem;
@@ -1629,7 +1538,6 @@ h1 {
   .nav__link.active {
     transform: translateY(0);
   }
-
   .contact {
     font-size: 16px;
   }
@@ -1641,16 +1549,15 @@ h1 {
     top: 6rem;
     transform: translateX(-50%);
   }
-
   .nav {
     height: calc(100vh + 10rem);
-    clip-path: circle(29px at calc(100% - 6rem - (60px / 2)) calc(60px / 2));
+    -webkit-clip-path: circle(29px at calc(100% - 6rem - (60px / 2)) calc(60px / 2));
+            clip-path: circle(29px at calc(100% - 6rem - (60px / 2)) calc(60px / 2));
     /* je remonte le menu .hamburger relativement à son parent .hamburger__fixed-menu pour qu'il colle au sommet de la page */
   }
   .nav.active {
     top: -6rem;
   }
-
   .hamburger__fixed-menu {
     position: relative;
   }
@@ -1665,6 +1572,4 @@ h1 {
     background: #f7f7f7;
     transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

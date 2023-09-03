@@ -660,7 +660,10 @@ h1 {
         }
     }
     
-    .projects__container--city-app, .projects__container--weatherApp {
+    .projects__container--city-app,
+    .projects__container--todolist_vue,
+    .projects__container--two,
+    .projects__container--four {
         align-items: flex-end;
     }
 
@@ -670,15 +673,18 @@ h1 {
 
     .projects__container--two {
         order: -1;
-        align-items: flex-end;
 
         & .projects__container--description {
             text-align: right;
         }
     }
 
-    .projects__container--todolist {
+    .projects__container--todolist, .projects__container--weatherApp {
         align-items: flex-start;
+    }
+
+    .projects__container--weatherApp {
+        order: 1;
     }
 }
 
